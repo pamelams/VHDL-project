@@ -1,5 +1,7 @@
 --
 -- 	Cronômetro em VHDL
+--
+--	Criado por Pâmela Medeiros e Sofia Lopes
 --	
 
 	library IEEE;
