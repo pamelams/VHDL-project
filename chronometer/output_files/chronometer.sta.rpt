@@ -1,0 +1,1863 @@
+TimeQuest Timing Analyzer report for chronometer
+Thu Nov 22 18:45:37 2018
+Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'clk_50MHz'
+ 12. Slow Model Setup: 'clk'
+ 13. Slow Model Setup: 'enable'
+ 14. Slow Model Hold: 'clk'
+ 15. Slow Model Hold: 'enable'
+ 16. Slow Model Hold: 'clk_50MHz'
+ 17. Slow Model Minimum Pulse Width: 'clk_50MHz'
+ 18. Slow Model Minimum Pulse Width: 'enable'
+ 19. Slow Model Minimum Pulse Width: 'clk'
+ 20. Clock to Output Times
+ 21. Minimum Clock to Output Times
+ 22. Fast Model Setup Summary
+ 23. Fast Model Hold Summary
+ 24. Fast Model Recovery Summary
+ 25. Fast Model Removal Summary
+ 26. Fast Model Minimum Pulse Width Summary
+ 27. Fast Model Setup: 'clk_50MHz'
+ 28. Fast Model Setup: 'clk'
+ 29. Fast Model Setup: 'enable'
+ 30. Fast Model Hold: 'clk'
+ 31. Fast Model Hold: 'enable'
+ 32. Fast Model Hold: 'clk_50MHz'
+ 33. Fast Model Minimum Pulse Width: 'clk_50MHz'
+ 34. Fast Model Minimum Pulse Width: 'enable'
+ 35. Fast Model Minimum Pulse Width: 'clk'
+ 36. Clock to Output Times
+ 37. Minimum Clock to Output Times
+ 38. Multicorner Timing Analysis Summary
+ 39. Clock to Output Times
+ 40. Minimum Clock to Output Times
+ 41. Setup Transfers
+ 42. Hold Transfers
+ 43. Report TCCS
+ 44. Report RSKM
+ 45. Unconstrained Paths
+ 46. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                       ;
++--------------------+----------------------------------------------------+
+; Quartus II Version ; Version 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
+; Revision Name      ; chronometer                                        ;
+; Device Family      ; Cyclone II                                         ;
+; Device Name        ; EP2C35F672C6                                       ;
+; Timing Models      ; Final                                              ;
+; Delay Model        ; Combined                                           ;
+; Rise/Fall Delays   ; Unavailable                                        ;
++--------------------+----------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets       ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------------+
+; clk        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk }       ;
+; clk_50MHz  ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk_50MHz } ;
+; enable     ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { enable }    ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Slow Model Fmax Summary                                                                                    ;
++-------------+-----------------+------------+---------------------------------------------------------------+
+; Fmax        ; Restricted Fmax ; Clock Name ; Note                                                          ;
++-------------+-----------------+------------+---------------------------------------------------------------+
+; 215.7 MHz   ; 215.7 MHz       ; clk_50MHz  ;                                                               ;
+; 388.8 MHz   ; 388.8 MHz       ; clk        ;                                                               ;
+; 1610.31 MHz ; 420.17 MHz      ; enable     ; limit due to minimum period restriction (max I/O toggle rate) ;
++-------------+-----------------+------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++------------------------------------+
+; Slow Model Setup Summary           ;
++-----------+--------+---------------+
+; Clock     ; Slack  ; End Point TNS ;
++-----------+--------+---------------+
+; clk_50MHz ; -3.636 ; -46.012       ;
+; clk       ; -1.572 ; -18.350       ;
+; enable    ; 0.379  ; 0.000         ;
++-----------+--------+---------------+
+
+
++-----------------------------------+
+; Slow Model Hold Summary           ;
++-----------+-------+---------------+
+; Clock     ; Slack ; End Point TNS ;
++-----------+-------+---------------+
+; clk       ; 0.391 ; 0.000         ;
+; enable    ; 0.391 ; 0.000         ;
+; clk_50MHz ; 0.801 ; 0.000         ;
++-----------+-------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++-----------+--------+-------------------+
+; Clock     ; Slack  ; End Point TNS     ;
++-----------+--------+-------------------+
+; clk_50MHz ; -1.380 ; -21.380           ;
+; enable    ; -1.380 ; -2.380            ;
+; clk       ; -0.500 ; -15.000           ;
++-----------+--------+-------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'clk_50MHz'                                                                                  ;
++--------+----------------+----------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node      ; To Node        ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------+----------------+--------------+-------------+--------------+------------+------------+
+; -3.636 ; \divisor:k[0]  ; \divisor:k[16] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.001     ; 4.671      ;
+; -3.636 ; \divisor:k[0]  ; \divisor:k[17] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.001     ; 4.671      ;
+; -3.636 ; \divisor:k[0]  ; \divisor:k[15] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.001     ; 4.671      ;
+; -3.633 ; \divisor:k[0]  ; \divisor:k[8]  ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 4.669      ;
+; -3.633 ; \divisor:k[0]  ; \divisor:k[5]  ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 4.669      ;
+; -3.449 ; \divisor:k[1]  ; \divisor:k[16] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.001     ; 4.484      ;
+; -3.449 ; \divisor:k[1]  ; \divisor:k[17] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.001     ; 4.484      ;
+; -3.449 ; \divisor:k[1]  ; \divisor:k[15] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.001     ; 4.484      ;
+; -3.446 ; \divisor:k[1]  ; \divisor:k[8]  ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 4.482      ;
+; -3.446 ; \divisor:k[1]  ; \divisor:k[5]  ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 4.482      ;
+; -3.426 ; \divisor:k[0]  ; \divisor:k[13] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.002      ; 4.464      ;
+; -3.369 ; \divisor:k[2]  ; \divisor:k[16] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.001     ; 4.404      ;
+; -3.369 ; \divisor:k[2]  ; \divisor:k[17] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.001     ; 4.404      ;
+; -3.369 ; \divisor:k[2]  ; \divisor:k[15] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.001     ; 4.404      ;
+; -3.366 ; \divisor:k[2]  ; \divisor:k[8]  ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 4.402      ;
+; -3.366 ; \divisor:k[2]  ; \divisor:k[5]  ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 4.402      ;
+; -3.337 ; \divisor:k[3]  ; \divisor:k[16] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.001     ; 4.372      ;
+; -3.337 ; \divisor:k[3]  ; \divisor:k[17] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.001     ; 4.372      ;
+; -3.337 ; \divisor:k[3]  ; \divisor:k[15] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.001     ; 4.372      ;
+; -3.334 ; \divisor:k[3]  ; \divisor:k[8]  ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 4.370      ;
+; -3.334 ; \divisor:k[3]  ; \divisor:k[5]  ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 4.370      ;
+; -3.269 ; \divisor:k[0]  ; \divisor:k[18] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.002      ; 4.307      ;
+; -3.239 ; \divisor:k[7]  ; \divisor:k[16] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.001     ; 4.274      ;
+; -3.239 ; \divisor:k[4]  ; \divisor:k[16] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.001     ; 4.274      ;
+; -3.239 ; \divisor:k[7]  ; \divisor:k[17] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.001     ; 4.274      ;
+; -3.239 ; \divisor:k[4]  ; \divisor:k[17] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.001     ; 4.274      ;
+; -3.239 ; \divisor:k[7]  ; \divisor:k[15] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.001     ; 4.274      ;
+; -3.239 ; \divisor:k[4]  ; \divisor:k[15] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.001     ; 4.274      ;
+; -3.239 ; \divisor:k[1]  ; \divisor:k[13] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.002      ; 4.277      ;
+; -3.236 ; \divisor:k[7]  ; \divisor:k[8]  ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 4.272      ;
+; -3.236 ; \divisor:k[4]  ; \divisor:k[8]  ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 4.272      ;
+; -3.236 ; \divisor:k[7]  ; \divisor:k[5]  ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 4.272      ;
+; -3.236 ; \divisor:k[4]  ; \divisor:k[5]  ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 4.272      ;
+; -3.223 ; \divisor:k[9]  ; \divisor:k[16] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.003     ; 4.256      ;
+; -3.223 ; \divisor:k[9]  ; \divisor:k[17] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.003     ; 4.256      ;
+; -3.223 ; \divisor:k[9]  ; \divisor:k[15] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.003     ; 4.256      ;
+; -3.220 ; \divisor:k[9]  ; \divisor:k[8]  ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.002     ; 4.254      ;
+; -3.220 ; \divisor:k[9]  ; \divisor:k[5]  ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.002     ; 4.254      ;
+; -3.198 ; \divisor:k[5]  ; \divisor:k[16] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.001     ; 4.233      ;
+; -3.198 ; \divisor:k[5]  ; \divisor:k[17] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.001     ; 4.233      ;
+; -3.198 ; \divisor:k[5]  ; \divisor:k[15] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.001     ; 4.233      ;
+; -3.195 ; \divisor:k[5]  ; \divisor:k[8]  ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 4.231      ;
+; -3.195 ; \divisor:k[5]  ; \divisor:k[5]  ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 4.231      ;
+; -3.159 ; \divisor:k[2]  ; \divisor:k[13] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.002      ; 4.197      ;
+; -3.127 ; \divisor:k[3]  ; \divisor:k[13] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.002      ; 4.165      ;
+; -3.086 ; \divisor:k[6]  ; \divisor:k[16] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.001     ; 4.121      ;
+; -3.086 ; \divisor:k[6]  ; \divisor:k[17] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.001     ; 4.121      ;
+; -3.086 ; \divisor:k[6]  ; \divisor:k[15] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.001     ; 4.121      ;
+; -3.083 ; \divisor:k[6]  ; \divisor:k[8]  ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 4.119      ;
+; -3.083 ; \divisor:k[6]  ; \divisor:k[5]  ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 4.119      ;
+; -3.082 ; \divisor:k[1]  ; \divisor:k[18] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.002      ; 4.120      ;
+; -3.029 ; \divisor:k[7]  ; \divisor:k[13] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.002      ; 4.067      ;
+; -3.029 ; \divisor:k[4]  ; \divisor:k[13] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.002      ; 4.067      ;
+; -3.013 ; \divisor:k[9]  ; \divisor:k[13] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 4.049      ;
+; -3.002 ; \divisor:k[2]  ; \divisor:k[18] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.002      ; 4.040      ;
+; -2.991 ; \divisor:k[8]  ; \divisor:k[16] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.001     ; 4.026      ;
+; -2.991 ; \divisor:k[8]  ; \divisor:k[17] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.001     ; 4.026      ;
+; -2.991 ; \divisor:k[8]  ; \divisor:k[15] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.001     ; 4.026      ;
+; -2.988 ; \divisor:k[8]  ; \divisor:k[8]  ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 4.024      ;
+; -2.988 ; \divisor:k[8]  ; \divisor:k[5]  ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 4.024      ;
+; -2.988 ; \divisor:k[5]  ; \divisor:k[13] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.002      ; 4.026      ;
+; -2.970 ; \divisor:k[3]  ; \divisor:k[18] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.002      ; 4.008      ;
+; -2.935 ; \divisor:k[11] ; \divisor:k[13] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 3.971      ;
+; -2.919 ; \divisor:k[10] ; \divisor:k[16] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.003     ; 3.952      ;
+; -2.919 ; \divisor:k[10] ; \divisor:k[17] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.003     ; 3.952      ;
+; -2.919 ; \divisor:k[10] ; \divisor:k[15] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.003     ; 3.952      ;
+; -2.916 ; \divisor:k[10] ; \divisor:k[8]  ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.002     ; 3.950      ;
+; -2.916 ; \divisor:k[10] ; \divisor:k[5]  ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.002     ; 3.950      ;
+; -2.876 ; \divisor:k[6]  ; \divisor:k[13] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.002      ; 3.914      ;
+; -2.872 ; \divisor:k[7]  ; \divisor:k[18] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.002      ; 3.910      ;
+; -2.872 ; \divisor:k[4]  ; \divisor:k[18] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.002      ; 3.910      ;
+; -2.856 ; \divisor:k[9]  ; \divisor:k[18] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 3.892      ;
+; -2.839 ; \divisor:k[11] ; \divisor:k[18] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 3.875      ;
+; -2.831 ; \divisor:k[5]  ; \divisor:k[18] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.002      ; 3.869      ;
+; -2.785 ; \divisor:k[15] ; \divisor:k[15] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 3.821      ;
+; -2.784 ; \divisor:k[15] ; \divisor:k[17] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 3.820      ;
+; -2.783 ; \divisor:k[15] ; \divisor:k[16] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 3.819      ;
+; -2.781 ; \divisor:k[8]  ; \divisor:k[13] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.002      ; 3.819      ;
+; -2.777 ; \divisor:k[12] ; \divisor:k[16] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.003     ; 3.810      ;
+; -2.777 ; \divisor:k[12] ; \divisor:k[17] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.003     ; 3.810      ;
+; -2.777 ; \divisor:k[12] ; \divisor:k[15] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.003     ; 3.810      ;
+; -2.774 ; \divisor:k[12] ; \divisor:k[8]  ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.002     ; 3.808      ;
+; -2.774 ; \divisor:k[12] ; \divisor:k[5]  ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.002     ; 3.808      ;
+; -2.764 ; \divisor:k[11] ; \divisor:k[5]  ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.002     ; 3.798      ;
+; -2.763 ; \divisor:k[11] ; \divisor:k[8]  ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.002     ; 3.797      ;
+; -2.753 ; \divisor:k[15] ; \divisor:k[5]  ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.001      ; 3.790      ;
+; -2.752 ; \divisor:k[15] ; \divisor:k[8]  ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.001      ; 3.789      ;
+; -2.750 ; \divisor:k[14] ; \divisor:k[13] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 3.786      ;
+; -2.749 ; \divisor:k[11] ; \divisor:k[15] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.003     ; 3.782      ;
+; -2.719 ; \divisor:k[6]  ; \divisor:k[18] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.002      ; 3.757      ;
+; -2.717 ; \divisor:k[16] ; \divisor:k[15] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 3.753      ;
+; -2.716 ; \divisor:k[16] ; \divisor:k[17] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 3.752      ;
+; -2.715 ; \divisor:k[16] ; \divisor:k[16] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 3.751      ;
+; -2.709 ; \divisor:k[10] ; \divisor:k[13] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 3.745      ;
+; -2.685 ; \divisor:k[16] ; \divisor:k[5]  ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.001      ; 3.722      ;
+; -2.684 ; \divisor:k[16] ; \divisor:k[8]  ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.001      ; 3.721      ;
+; -2.661 ; \divisor:k[11] ; \divisor:k[16] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.003     ; 3.694      ;
+; -2.661 ; \divisor:k[11] ; \divisor:k[17] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.003     ; 3.694      ;
+; -2.654 ; \divisor:k[14] ; \divisor:k[18] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 3.690      ;
+; -2.624 ; \divisor:k[8]  ; \divisor:k[18] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.002      ; 3.662      ;
++--------+----------------+----------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'clk'                                                                                                ;
++--------+--------------------+--------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node          ; To Node            ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------+--------------------+--------------+-------------+--------------+------------+------------+
+; -1.572 ; \counter:count2[3] ; \counter:count3[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.608      ;
+; -1.572 ; \counter:count2[3] ; \counter:count3[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.608      ;
+; -1.572 ; \counter:count2[3] ; \counter:count3[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.608      ;
+; -1.572 ; \counter:count2[3] ; \counter:count3[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.608      ;
+; -1.565 ; \counter:count2[3] ; \counter:count4[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.601      ;
+; -1.565 ; \counter:count2[3] ; \counter:count4[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.601      ;
+; -1.565 ; \counter:count2[3] ; \counter:count4[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.601      ;
+; -1.538 ; \counter:count2[0] ; \counter:count3[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.574      ;
+; -1.538 ; \counter:count2[0] ; \counter:count3[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.574      ;
+; -1.538 ; \counter:count2[0] ; \counter:count3[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.574      ;
+; -1.538 ; \counter:count2[0] ; \counter:count3[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.574      ;
+; -1.531 ; \counter:count2[0] ; \counter:count4[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.567      ;
+; -1.531 ; \counter:count2[0] ; \counter:count4[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.567      ;
+; -1.531 ; \counter:count2[0] ; \counter:count4[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.567      ;
+; -1.486 ; \counter:count3[0] ; \counter:count4[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.522      ;
+; -1.486 ; \counter:count3[0] ; \counter:count4[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.522      ;
+; -1.486 ; \counter:count3[0] ; \counter:count4[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.522      ;
+; -1.464 ; \counter:count3[1] ; \counter:count4[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.500      ;
+; -1.464 ; \counter:count3[1] ; \counter:count4[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.500      ;
+; -1.464 ; \counter:count3[1] ; \counter:count4[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.500      ;
+; -1.438 ; \counter:count[3]  ; \counter:count3[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.474      ;
+; -1.438 ; \counter:count[3]  ; \counter:count3[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.474      ;
+; -1.438 ; \counter:count[3]  ; \counter:count3[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.474      ;
+; -1.438 ; \counter:count[3]  ; \counter:count3[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.474      ;
+; -1.436 ; \counter:count[2]  ; \counter:count3[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.472      ;
+; -1.436 ; \counter:count[2]  ; \counter:count3[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.472      ;
+; -1.436 ; \counter:count[2]  ; \counter:count3[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.472      ;
+; -1.436 ; \counter:count[2]  ; \counter:count3[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.472      ;
+; -1.431 ; \counter:count[3]  ; \counter:count4[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.467      ;
+; -1.431 ; \counter:count[3]  ; \counter:count4[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.467      ;
+; -1.431 ; \counter:count[3]  ; \counter:count4[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.467      ;
+; -1.429 ; \counter:count[2]  ; \counter:count4[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.465      ;
+; -1.429 ; \counter:count[2]  ; \counter:count4[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.465      ;
+; -1.429 ; \counter:count[2]  ; \counter:count4[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.465      ;
+; -1.395 ; \counter:count2[2] ; \counter:count3[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.431      ;
+; -1.395 ; \counter:count2[2] ; \counter:count3[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.431      ;
+; -1.395 ; \counter:count2[2] ; \counter:count3[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.431      ;
+; -1.395 ; \counter:count2[2] ; \counter:count3[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.431      ;
+; -1.388 ; \counter:count2[2] ; \counter:count4[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.424      ;
+; -1.388 ; \counter:count2[2] ; \counter:count4[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.424      ;
+; -1.388 ; \counter:count2[2] ; \counter:count4[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.424      ;
+; -1.362 ; \counter:count3[2] ; \counter:count4[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.398      ;
+; -1.362 ; \counter:count3[2] ; \counter:count4[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.398      ;
+; -1.362 ; \counter:count3[2] ; \counter:count4[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.398      ;
+; -1.308 ; \counter:count[0]  ; \counter:count3[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.344      ;
+; -1.308 ; \counter:count[0]  ; \counter:count3[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.344      ;
+; -1.308 ; \counter:count[0]  ; \counter:count3[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.344      ;
+; -1.308 ; \counter:count[0]  ; \counter:count3[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.344      ;
+; -1.301 ; \counter:count[0]  ; \counter:count4[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.337      ;
+; -1.301 ; \counter:count[0]  ; \counter:count4[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.337      ;
+; -1.301 ; \counter:count[0]  ; \counter:count4[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.337      ;
+; -1.272 ; \counter:count2[1] ; \counter:count3[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.308      ;
+; -1.272 ; \counter:count2[1] ; \counter:count3[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.308      ;
+; -1.272 ; \counter:count2[1] ; \counter:count3[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.308      ;
+; -1.272 ; \counter:count2[1] ; \counter:count3[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.308      ;
+; -1.265 ; \counter:count2[1] ; \counter:count4[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.301      ;
+; -1.265 ; \counter:count2[1] ; \counter:count4[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.301      ;
+; -1.265 ; \counter:count2[1] ; \counter:count4[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.301      ;
+; -1.236 ; \counter:count3[3] ; \counter:count4[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.272      ;
+; -1.236 ; \counter:count3[3] ; \counter:count4[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.272      ;
+; -1.236 ; \counter:count3[3] ; \counter:count4[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.272      ;
+; -1.176 ; \counter:count[1]  ; \counter:count3[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.212      ;
+; -1.176 ; \counter:count[1]  ; \counter:count3[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.212      ;
+; -1.176 ; \counter:count[1]  ; \counter:count3[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.212      ;
+; -1.176 ; \counter:count[1]  ; \counter:count3[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.212      ;
+; -1.169 ; \counter:count[1]  ; \counter:count4[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.205      ;
+; -1.169 ; \counter:count[1]  ; \counter:count4[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.205      ;
+; -1.169 ; \counter:count[1]  ; \counter:count4[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.205      ;
+; -1.082 ; \counter:count2[3] ; \counter:count2[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.118      ;
+; -1.062 ; \counter:count2[2] ; \counter:count2[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.098      ;
+; -1.036 ; \counter:count[0]  ; \counter:count[3]  ; clk          ; clk         ; 1.000        ; 0.000      ; 2.072      ;
+; -1.036 ; \counter:count[0]  ; \counter:count[1]  ; clk          ; clk         ; 1.000        ; 0.000      ; 2.072      ;
+; -0.999 ; \counter:count2[1] ; \counter:count2[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.035      ;
+; -0.943 ; \counter:count[0]  ; \counter:count[0]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.979      ;
+; -0.846 ; \counter:count[3]  ; \counter:count2[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.882      ;
+; -0.846 ; \counter:count[3]  ; \counter:count2[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.882      ;
+; -0.846 ; \counter:count[3]  ; \counter:count2[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.882      ;
+; -0.846 ; \counter:count[3]  ; \counter:count2[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.882      ;
+; -0.844 ; \counter:count[2]  ; \counter:count2[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.880      ;
+; -0.844 ; \counter:count[2]  ; \counter:count2[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.880      ;
+; -0.844 ; \counter:count[2]  ; \counter:count2[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.880      ;
+; -0.844 ; \counter:count[2]  ; \counter:count2[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.880      ;
+; -0.779 ; \counter:count2[0] ; \counter:count2[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.815      ;
+; -0.732 ; \counter:count[0]  ; \counter:count[2]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.768      ;
+; -0.716 ; \counter:count[0]  ; \counter:count2[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.752      ;
+; -0.716 ; \counter:count[0]  ; \counter:count2[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.752      ;
+; -0.716 ; \counter:count[0]  ; \counter:count2[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.752      ;
+; -0.716 ; \counter:count[0]  ; \counter:count2[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.752      ;
+; -0.584 ; \counter:count[1]  ; \counter:count2[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.620      ;
+; -0.584 ; \counter:count[1]  ; \counter:count2[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.620      ;
+; -0.584 ; \counter:count[1]  ; \counter:count2[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.620      ;
+; -0.584 ; \counter:count[1]  ; \counter:count2[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.620      ;
+; -0.294 ; \counter:count[2]  ; \counter:count[1]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.330      ;
+; -0.289 ; \counter:count[2]  ; \counter:count[3]  ; clk          ; clk         ; 1.000        ; 0.000      ; 1.325      ;
+; -0.259 ; \counter:count4[0] ; \counter:count4[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.295      ;
+; -0.238 ; \counter:count2[0] ; \counter:count2[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.274      ;
+; -0.238 ; \counter:count3[0] ; \counter:count3[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.274      ;
+; -0.237 ; \counter:count3[0] ; \counter:count3[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.273      ;
+; -0.235 ; \counter:count2[0] ; \counter:count2[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.271      ;
+; -0.228 ; \counter:count4[0] ; \counter:count4[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.264      ;
++--------+--------------------+--------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'enable'                                                                        ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node ; To Node ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; 0.379 ; en        ; en      ; enable       ; enable      ; 1.000        ; 0.000      ; 0.657      ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'clk'                                                                                                ;
++-------+--------------------+--------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node          ; To Node            ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------+--------------------+--------------+-------------+--------------+------------+------------+
+; 0.391 ; \counter:count[2]  ; \counter:count[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; \counter:count[3]  ; \counter:count[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; \counter:count[1]  ; \counter:count[1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; \counter:count2[0] ; \counter:count2[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; \counter:count2[2] ; \counter:count2[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; \counter:count2[3] ; \counter:count2[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; \counter:count3[0] ; \counter:count3[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; \counter:count3[2] ; \counter:count3[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; \counter:count3[3] ; \counter:count3[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; \counter:count3[1] ; \counter:count3[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; \counter:count4[0] ; \counter:count4[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; \counter:count4[1] ; \counter:count4[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; \counter:count4[2] ; \counter:count4[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.524 ; \counter:count4[2] ; \counter:count4[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.790      ;
+; 0.530 ; \counter:count[3]  ; \counter:count[1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.796      ;
+; 0.537 ; \counter:count[1]  ; \counter:count[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.803      ;
+; 0.543 ; \counter:count2[1] ; \counter:count2[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.809      ;
+; 0.552 ; \counter:count4[1] ; \counter:count4[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.818      ;
+; 0.557 ; \counter:count3[3] ; \counter:count3[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.823      ;
+; 0.560 ; \counter:count3[1] ; \counter:count3[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.826      ;
+; 0.561 ; \counter:count3[1] ; \counter:count3[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.827      ;
+; 0.713 ; \counter:count2[2] ; \counter:count2[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.979      ;
+; 0.812 ; \counter:count[1]  ; \counter:count[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.078      ;
+; 0.840 ; \counter:count3[0] ; \counter:count3[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.106      ;
+; 0.848 ; \counter:count2[1] ; \counter:count2[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.114      ;
+; 0.857 ; \counter:count3[2] ; \counter:count3[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.123      ;
+; 0.859 ; \counter:count3[2] ; \counter:count3[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.125      ;
+; 0.998 ; \counter:count4[0] ; \counter:count4[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.264      ;
+; 1.005 ; \counter:count2[0] ; \counter:count2[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.271      ;
+; 1.007 ; \counter:count3[0] ; \counter:count3[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.273      ;
+; 1.008 ; \counter:count2[0] ; \counter:count2[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.274      ;
+; 1.008 ; \counter:count3[0] ; \counter:count3[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.274      ;
+; 1.029 ; \counter:count4[0] ; \counter:count4[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.295      ;
+; 1.059 ; \counter:count[2]  ; \counter:count[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.325      ;
+; 1.064 ; \counter:count[2]  ; \counter:count[1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.330      ;
+; 1.354 ; \counter:count[1]  ; \counter:count2[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.620      ;
+; 1.354 ; \counter:count[1]  ; \counter:count2[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.620      ;
+; 1.354 ; \counter:count[1]  ; \counter:count2[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.620      ;
+; 1.354 ; \counter:count[1]  ; \counter:count2[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.620      ;
+; 1.486 ; \counter:count[0]  ; \counter:count2[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.752      ;
+; 1.486 ; \counter:count[0]  ; \counter:count2[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.752      ;
+; 1.486 ; \counter:count[0]  ; \counter:count2[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.752      ;
+; 1.486 ; \counter:count[0]  ; \counter:count2[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.752      ;
+; 1.502 ; \counter:count[0]  ; \counter:count[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.768      ;
+; 1.549 ; \counter:count2[0] ; \counter:count2[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.815      ;
+; 1.614 ; \counter:count[2]  ; \counter:count2[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.880      ;
+; 1.614 ; \counter:count[2]  ; \counter:count2[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.880      ;
+; 1.614 ; \counter:count[2]  ; \counter:count2[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.880      ;
+; 1.614 ; \counter:count[2]  ; \counter:count2[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.880      ;
+; 1.616 ; \counter:count[3]  ; \counter:count2[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.882      ;
+; 1.616 ; \counter:count[3]  ; \counter:count2[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.882      ;
+; 1.616 ; \counter:count[3]  ; \counter:count2[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.882      ;
+; 1.616 ; \counter:count[3]  ; \counter:count2[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.882      ;
+; 1.713 ; \counter:count[0]  ; \counter:count[0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.979      ;
+; 1.769 ; \counter:count2[1] ; \counter:count2[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.035      ;
+; 1.806 ; \counter:count[0]  ; \counter:count[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.072      ;
+; 1.806 ; \counter:count[0]  ; \counter:count[1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.072      ;
+; 1.832 ; \counter:count2[2] ; \counter:count2[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.098      ;
+; 1.852 ; \counter:count2[3] ; \counter:count2[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.118      ;
+; 1.939 ; \counter:count[1]  ; \counter:count4[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.205      ;
+; 1.939 ; \counter:count[1]  ; \counter:count4[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.205      ;
+; 1.939 ; \counter:count[1]  ; \counter:count4[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.205      ;
+; 1.946 ; \counter:count[1]  ; \counter:count3[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.212      ;
+; 1.946 ; \counter:count[1]  ; \counter:count3[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.212      ;
+; 1.946 ; \counter:count[1]  ; \counter:count3[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.212      ;
+; 1.946 ; \counter:count[1]  ; \counter:count3[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.212      ;
+; 2.006 ; \counter:count3[3] ; \counter:count4[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.272      ;
+; 2.006 ; \counter:count3[3] ; \counter:count4[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.272      ;
+; 2.006 ; \counter:count3[3] ; \counter:count4[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.272      ;
+; 2.035 ; \counter:count2[1] ; \counter:count4[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.301      ;
+; 2.035 ; \counter:count2[1] ; \counter:count4[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.301      ;
+; 2.035 ; \counter:count2[1] ; \counter:count4[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.301      ;
+; 2.042 ; \counter:count2[1] ; \counter:count3[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.308      ;
+; 2.042 ; \counter:count2[1] ; \counter:count3[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.308      ;
+; 2.042 ; \counter:count2[1] ; \counter:count3[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.308      ;
+; 2.042 ; \counter:count2[1] ; \counter:count3[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.308      ;
+; 2.071 ; \counter:count[0]  ; \counter:count4[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.337      ;
+; 2.071 ; \counter:count[0]  ; \counter:count4[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.337      ;
+; 2.071 ; \counter:count[0]  ; \counter:count4[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.337      ;
+; 2.078 ; \counter:count[0]  ; \counter:count3[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.344      ;
+; 2.078 ; \counter:count[0]  ; \counter:count3[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.344      ;
+; 2.078 ; \counter:count[0]  ; \counter:count3[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.344      ;
+; 2.078 ; \counter:count[0]  ; \counter:count3[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.344      ;
+; 2.132 ; \counter:count3[2] ; \counter:count4[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.398      ;
+; 2.132 ; \counter:count3[2] ; \counter:count4[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.398      ;
+; 2.132 ; \counter:count3[2] ; \counter:count4[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.398      ;
+; 2.158 ; \counter:count2[2] ; \counter:count4[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.424      ;
+; 2.158 ; \counter:count2[2] ; \counter:count4[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.424      ;
+; 2.158 ; \counter:count2[2] ; \counter:count4[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.424      ;
+; 2.165 ; \counter:count2[2] ; \counter:count3[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.431      ;
+; 2.165 ; \counter:count2[2] ; \counter:count3[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.431      ;
+; 2.165 ; \counter:count2[2] ; \counter:count3[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.431      ;
+; 2.165 ; \counter:count2[2] ; \counter:count3[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.431      ;
+; 2.199 ; \counter:count[2]  ; \counter:count4[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.465      ;
+; 2.199 ; \counter:count[2]  ; \counter:count4[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.465      ;
+; 2.199 ; \counter:count[2]  ; \counter:count4[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.465      ;
+; 2.201 ; \counter:count[3]  ; \counter:count4[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.467      ;
+; 2.201 ; \counter:count[3]  ; \counter:count4[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.467      ;
+; 2.201 ; \counter:count[3]  ; \counter:count4[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.467      ;
+; 2.206 ; \counter:count[2]  ; \counter:count3[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.472      ;
++-------+--------------------+--------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'enable'                                                                         ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node ; To Node ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; 0.391 ; en        ; en      ; enable       ; enable      ; 0.000        ; 0.000      ; 0.657      ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'clk_50MHz'                                                                                  ;
++-------+----------------+----------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node      ; To Node        ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------+----------------+--------------+-------------+--------------+------------+------------+
+; 0.801 ; \divisor:k[2]  ; \divisor:k[2]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 1.067      ;
+; 0.805 ; \divisor:k[11] ; \divisor:k[11] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 1.071      ;
+; 0.837 ; \divisor:k[3]  ; \divisor:k[3]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 1.103      ;
+; 0.985 ; \divisor:k[14] ; \divisor:k[14] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 1.251      ;
+; 1.023 ; \divisor:k[7]  ; \divisor:k[7]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 1.289      ;
+; 1.184 ; \divisor:k[2]  ; \divisor:k[3]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 1.450      ;
+; 1.185 ; \divisor:k[6]  ; \divisor:k[7]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 1.451      ;
+; 1.193 ; \divisor:k[1]  ; \divisor:k[2]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 1.459      ;
+; 1.194 ; \divisor:k[13] ; \divisor:k[14] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 1.460      ;
+; 1.264 ; \divisor:k[1]  ; \divisor:k[3]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 1.530      ;
+; 1.297 ; \divisor:k[5]  ; \divisor:k[7]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 1.563      ;
+; 1.330 ; \divisor:k[11] ; \divisor:k[14] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 1.596      ;
+; 1.338 ; \divisor:k[4]  ; \divisor:k[7]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 1.604      ;
+; 1.355 ; \divisor:k[1]  ; \divisor:k[1]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 1.621      ;
+; 1.375 ; \divisor:k[10] ; \divisor:k[11] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 1.641      ;
+; 1.380 ; \divisor:k[0]  ; \divisor:k[2]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 1.646      ;
+; 1.382 ; \divisor:k[0]  ; \divisor:k[0]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 1.648      ;
+; 1.436 ; \divisor:k[3]  ; \divisor:k[7]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 1.702      ;
+; 1.446 ; \divisor:k[12] ; \divisor:k[14] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 1.712      ;
+; 1.447 ; \divisor:k[8]  ; \divisor:k[11] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.002      ; 1.715      ;
+; 1.451 ; \divisor:k[0]  ; \divisor:k[3]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 1.717      ;
+; 1.468 ; \divisor:k[2]  ; \divisor:k[7]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 1.734      ;
+; 1.519 ; \divisor:k[8]  ; \divisor:k[8]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 1.785      ;
+; 1.528 ; \divisor:k[6]  ; \divisor:k[6]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 1.794      ;
+; 1.532 ; \divisor:k[4]  ; \divisor:k[4]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 1.798      ;
+; 1.542 ; \divisor:k[6]  ; \divisor:k[11] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.002      ; 1.810      ;
+; 1.548 ; \divisor:k[1]  ; \divisor:k[7]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 1.814      ;
+; 1.588 ; \divisor:k[10] ; \divisor:k[14] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 1.854      ;
+; 1.608 ; \divisor:k[18] ; \divisor:k[18] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 1.874      ;
+; 1.625 ; \divisor:k[16] ; clk            ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 1.891      ;
+; 1.654 ; \divisor:k[5]  ; \divisor:k[11] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.002      ; 1.922      ;
+; 1.660 ; \divisor:k[8]  ; \divisor:k[14] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.002      ; 1.928      ;
+; 1.679 ; \divisor:k[9]  ; \divisor:k[11] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 1.945      ;
+; 1.695 ; \divisor:k[7]  ; \divisor:k[11] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.002      ; 1.963      ;
+; 1.695 ; \divisor:k[4]  ; \divisor:k[11] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.002      ; 1.963      ;
+; 1.708 ; \divisor:k[10] ; \divisor:k[10] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 1.974      ;
+; 1.708 ; \divisor:k[5]  ; \divisor:k[5]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 1.974      ;
+; 1.709 ; \divisor:k[13] ; \divisor:k[13] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 1.975      ;
+; 1.721 ; \divisor:k[12] ; \divisor:k[12] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 1.987      ;
+; 1.731 ; \divisor:k[17] ; clk            ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 1.997      ;
+; 1.735 ; \divisor:k[0]  ; \divisor:k[7]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 2.001      ;
+; 1.755 ; \divisor:k[6]  ; \divisor:k[14] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.002      ; 2.023      ;
+; 1.761 ; \divisor:k[16] ; \divisor:k[16] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 2.027      ;
+; 1.761 ; \divisor:k[16] ; \divisor:k[17] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 2.027      ;
+; 1.772 ; \divisor:k[15] ; clk            ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 2.038      ;
+; 1.793 ; \divisor:k[3]  ; \divisor:k[11] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.002      ; 2.061      ;
+; 1.825 ; \divisor:k[2]  ; \divisor:k[11] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.002      ; 2.093      ;
+; 1.854 ; \divisor:k[0]  ; \divisor:k[1]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 2.120      ;
+; 1.867 ; \divisor:k[5]  ; \divisor:k[14] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.002      ; 2.135      ;
+; 1.867 ; \divisor:k[17] ; \divisor:k[16] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 2.133      ;
+; 1.867 ; \divisor:k[17] ; \divisor:k[17] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 2.133      ;
+; 1.877 ; \divisor:k[18] ; \divisor:k[13] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 2.143      ;
+; 1.892 ; \divisor:k[9]  ; \divisor:k[14] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 2.158      ;
+; 1.905 ; \divisor:k[1]  ; \divisor:k[11] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.002      ; 2.173      ;
+; 1.908 ; \divisor:k[7]  ; \divisor:k[14] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.002      ; 2.176      ;
+; 1.908 ; \divisor:k[15] ; \divisor:k[16] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 2.174      ;
+; 1.908 ; \divisor:k[15] ; \divisor:k[17] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 2.174      ;
+; 1.908 ; \divisor:k[4]  ; \divisor:k[14] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.002      ; 2.176      ;
+; 1.917 ; \divisor:k[11] ; \divisor:k[12] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 2.183      ;
+; 1.935 ; \divisor:k[6]  ; \divisor:k[8]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 2.201      ;
+; 1.942 ; \divisor:k[3]  ; \divisor:k[4]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 2.208      ;
+; 1.952 ; \divisor:k[5]  ; \divisor:k[6]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 2.218      ;
+; 1.967 ; \divisor:k[16] ; \divisor:k[15] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 2.233      ;
+; 1.974 ; \divisor:k[2]  ; \divisor:k[4]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 2.240      ;
+; 1.981 ; \divisor:k[16] ; \divisor:k[8]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.001      ; 2.248      ;
+; 1.982 ; \divisor:k[16] ; \divisor:k[5]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.001      ; 2.249      ;
+; 1.982 ; en             ; \divisor:k[0]  ; enable       ; clk_50MHz   ; 0.000        ; -1.034     ; 1.214      ;
+; 1.982 ; en             ; \divisor:k[1]  ; enable       ; clk_50MHz   ; 0.000        ; -1.034     ; 1.214      ;
+; 1.982 ; en             ; \divisor:k[2]  ; enable       ; clk_50MHz   ; 0.000        ; -1.034     ; 1.214      ;
+; 1.982 ; en             ; \divisor:k[3]  ; enable       ; clk_50MHz   ; 0.000        ; -1.034     ; 1.214      ;
+; 1.982 ; en             ; \divisor:k[4]  ; enable       ; clk_50MHz   ; 0.000        ; -1.034     ; 1.214      ;
+; 1.982 ; en             ; \divisor:k[6]  ; enable       ; clk_50MHz   ; 0.000        ; -1.034     ; 1.214      ;
+; 1.982 ; en             ; \divisor:k[7]  ; enable       ; clk_50MHz   ; 0.000        ; -1.034     ; 1.214      ;
+; 1.982 ; en             ; \divisor:k[8]  ; enable       ; clk_50MHz   ; 0.000        ; -1.034     ; 1.214      ;
+; 1.982 ; en             ; \divisor:k[5]  ; enable       ; clk_50MHz   ; 0.000        ; -1.034     ; 1.214      ;
+; 1.993 ; \divisor:k[4]  ; \divisor:k[6]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 2.259      ;
+; 2.006 ; \divisor:k[3]  ; \divisor:k[14] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.002      ; 2.274      ;
+; 2.038 ; \divisor:k[2]  ; \divisor:k[14] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.002      ; 2.306      ;
+; 2.047 ; \divisor:k[5]  ; \divisor:k[8]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 2.313      ;
+; 2.054 ; \divisor:k[1]  ; \divisor:k[4]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 2.320      ;
+; 2.057 ; \divisor:k[16] ; \divisor:k[18] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.003      ; 2.326      ;
+; 2.064 ; \divisor:k[4]  ; \divisor:k[5]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 2.330      ;
+; 2.073 ; \divisor:k[17] ; \divisor:k[15] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 2.339      ;
+; 2.087 ; \divisor:k[17] ; \divisor:k[8]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.001      ; 2.354      ;
+; 2.088 ; \divisor:k[7]  ; \divisor:k[8]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 2.354      ;
+; 2.088 ; \divisor:k[17] ; \divisor:k[5]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.001      ; 2.355      ;
+; 2.088 ; \divisor:k[4]  ; \divisor:k[8]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 2.354      ;
+; 2.091 ; \divisor:k[3]  ; \divisor:k[6]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 2.357      ;
+; 2.092 ; \divisor:k[0]  ; \divisor:k[11] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.002      ; 2.360      ;
+; 2.095 ; \divisor:k[8]  ; \divisor:k[10] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.002      ; 2.363      ;
+; 2.103 ; \divisor:k[18] ; clk            ; clk_50MHz    ; clk_50MHz   ; 0.000        ; -0.003     ; 2.366      ;
+; 2.114 ; \divisor:k[15] ; \divisor:k[15] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 2.380      ;
+; 2.118 ; \divisor:k[1]  ; \divisor:k[14] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.002      ; 2.386      ;
+; 2.123 ; \divisor:k[2]  ; \divisor:k[6]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 2.389      ;
+; 2.126 ; \divisor:k[13] ; clk            ; clk_50MHz    ; clk_50MHz   ; 0.000        ; -0.003     ; 2.389      ;
+; 2.128 ; \divisor:k[15] ; \divisor:k[8]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.001      ; 2.395      ;
+; 2.129 ; \divisor:k[15] ; \divisor:k[5]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.001      ; 2.396      ;
+; 2.153 ; \divisor:k[16] ; \divisor:k[13] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.003      ; 2.422      ;
+; 2.157 ; \divisor:k[11] ; \divisor:k[13] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 2.423      ;
+; 2.162 ; \divisor:k[3]  ; \divisor:k[5]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 2.428      ;
++-------+----------------+----------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'clk_50MHz'                                                                     ;
++--------+--------------+----------------+------------------+-----------+------------+----------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock     ; Clock Edge ; Target                     ;
++--------+--------------+----------------+------------------+-----------+------------+----------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; clk_50MHz ; Rise       ; clk_50MHz                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk_50MHz ; Rise       ; \divisor:k[0]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; \divisor:k[0]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk_50MHz ; Rise       ; \divisor:k[10]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; \divisor:k[10]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk_50MHz ; Rise       ; \divisor:k[11]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; \divisor:k[11]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk_50MHz ; Rise       ; \divisor:k[12]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; \divisor:k[12]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk_50MHz ; Rise       ; \divisor:k[13]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; \divisor:k[13]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk_50MHz ; Rise       ; \divisor:k[14]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; \divisor:k[14]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk_50MHz ; Rise       ; \divisor:k[15]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; \divisor:k[15]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk_50MHz ; Rise       ; \divisor:k[16]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; \divisor:k[16]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk_50MHz ; Rise       ; \divisor:k[17]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; \divisor:k[17]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk_50MHz ; Rise       ; \divisor:k[18]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; \divisor:k[18]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk_50MHz ; Rise       ; \divisor:k[1]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; \divisor:k[1]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk_50MHz ; Rise       ; \divisor:k[2]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; \divisor:k[2]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk_50MHz ; Rise       ; \divisor:k[3]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; \divisor:k[3]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk_50MHz ; Rise       ; \divisor:k[4]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; \divisor:k[4]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk_50MHz ; Rise       ; \divisor:k[5]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; \divisor:k[5]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk_50MHz ; Rise       ; \divisor:k[6]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; \divisor:k[6]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk_50MHz ; Rise       ; \divisor:k[7]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; \divisor:k[7]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk_50MHz ; Rise       ; \divisor:k[8]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; \divisor:k[8]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk_50MHz ; Rise       ; \divisor:k[9]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; \divisor:k[9]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk_50MHz ; Rise       ; clk                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; clk                        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_50MHz ; Rise       ; \divisor:k[0]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; \divisor:k[0]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_50MHz ; Rise       ; \divisor:k[10]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; \divisor:k[10]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_50MHz ; Rise       ; \divisor:k[11]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; \divisor:k[11]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_50MHz ; Rise       ; \divisor:k[12]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; \divisor:k[12]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_50MHz ; Rise       ; \divisor:k[13]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; \divisor:k[13]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_50MHz ; Rise       ; \divisor:k[14]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; \divisor:k[14]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_50MHz ; Rise       ; \divisor:k[15]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; \divisor:k[15]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_50MHz ; Rise       ; \divisor:k[16]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; \divisor:k[16]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_50MHz ; Rise       ; \divisor:k[17]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; \divisor:k[17]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_50MHz ; Rise       ; \divisor:k[18]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; \divisor:k[18]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_50MHz ; Rise       ; \divisor:k[1]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; \divisor:k[1]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_50MHz ; Rise       ; \divisor:k[2]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; \divisor:k[2]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_50MHz ; Rise       ; \divisor:k[3]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; \divisor:k[3]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_50MHz ; Rise       ; \divisor:k[4]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; \divisor:k[4]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_50MHz ; Rise       ; \divisor:k[5]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; \divisor:k[5]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_50MHz ; Rise       ; \divisor:k[6]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; \divisor:k[6]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_50MHz ; Rise       ; \divisor:k[7]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; \divisor:k[7]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_50MHz ; Rise       ; \divisor:k[8]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; \divisor:k[8]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_50MHz ; Rise       ; \divisor:k[9]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; \divisor:k[9]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_50MHz ; Rise       ; clk_50MHz|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; clk_50MHz|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_50MHz ; Rise       ; clk_50MHz~clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; clk_50MHz~clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_50MHz ; Rise       ; clk_50MHz~clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; clk_50MHz~clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_50MHz ; Rise       ; clk|clk                    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; clk|clk                    ;
++--------+--------------+----------------+------------------+-----------+------------+----------------------------+
+
+
++--------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'enable'                                                         ;
++--------+--------------+----------------+------------------+--------+------------+----------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock  ; Clock Edge ; Target         ;
++--------+--------------+----------------+------------------+--------+------------+----------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; enable ; Rise       ; enable         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; enable ; Rise       ; en             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; enable ; Rise       ; en             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enable ; Rise       ; enable|combout ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enable ; Rise       ; enable|combout ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enable ; Rise       ; en|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enable ; Rise       ; en|clk         ;
++--------+--------------+----------------+------------------+--------+------------+----------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'clk'                                                                   ;
++--------+--------------+----------------+------------------+-------+------------+------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                 ;
++--------+--------------+----------------+------------------+-------+------------+------------------------+
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \counter:count2[0]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \counter:count2[0]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \counter:count2[1]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \counter:count2[1]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \counter:count2[2]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \counter:count2[2]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \counter:count2[3]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \counter:count2[3]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \counter:count3[0]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \counter:count3[0]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \counter:count3[1]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \counter:count3[1]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \counter:count3[2]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \counter:count3[2]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \counter:count3[3]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \counter:count3[3]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \counter:count4[0]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \counter:count4[0]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \counter:count4[1]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \counter:count4[1]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \counter:count4[2]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \counter:count4[2]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \counter:count[0]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \counter:count[0]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \counter:count[1]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \counter:count[1]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \counter:count[2]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \counter:count[2]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \counter:count[3]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \counter:count[3]      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \counter:count2[0]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \counter:count2[0]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \counter:count2[1]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \counter:count2[1]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \counter:count2[2]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \counter:count2[2]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \counter:count2[3]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \counter:count2[3]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \counter:count3[0]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \counter:count3[0]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \counter:count3[1]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \counter:count3[1]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \counter:count3[2]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \counter:count3[2]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \counter:count3[3]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \counter:count3[3]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \counter:count4[0]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \counter:count4[0]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \counter:count4[1]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \counter:count4[1]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \counter:count4[2]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \counter:count4[2]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \counter:count[0]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \counter:count[0]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \counter:count[1]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \counter:count[1]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \counter:count[2]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \counter:count[2]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \counter:count[3]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \counter:count[3]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk|regout             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk|regout             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~clkctrl|inclk[0]   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk~clkctrl|inclk[0]   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~clkctrl|outclk     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk~clkctrl|outclk     ;
++--------+--------------+----------------+------------------+-------+------------+------------------------+
+
+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-------------+------------+-------+-------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------+------------+-------+-------+------------+-----------------+
+; ten_cen[*]  ; clk        ; 7.732 ; 7.732 ; Rise       ; clk             ;
+;  ten_cen[0] ; clk        ; 7.502 ; 7.502 ; Rise       ; clk             ;
+;  ten_cen[1] ; clk        ; 7.522 ; 7.522 ; Rise       ; clk             ;
+;  ten_cen[2] ; clk        ; 7.732 ; 7.732 ; Rise       ; clk             ;
+;  ten_cen[3] ; clk        ; 7.719 ; 7.719 ; Rise       ; clk             ;
+;  ten_cen[4] ; clk        ; 7.523 ; 7.523 ; Rise       ; clk             ;
+;  ten_cen[5] ; clk        ; 7.732 ; 7.732 ; Rise       ; clk             ;
+;  ten_cen[6] ; clk        ; 7.487 ; 7.487 ; Rise       ; clk             ;
+; ten_sec[*]  ; clk        ; 8.338 ; 8.338 ; Rise       ; clk             ;
+;  ten_sec[0] ; clk        ; 8.128 ; 8.128 ; Rise       ; clk             ;
+;  ten_sec[1] ; clk        ; 8.142 ; 8.142 ; Rise       ; clk             ;
+;  ten_sec[2] ; clk        ; 8.338 ; 8.338 ; Rise       ; clk             ;
+;  ten_sec[3] ; clk        ; 8.141 ; 8.141 ; Rise       ; clk             ;
+;  ten_sec[4] ; clk        ; 8.082 ; 8.082 ; Rise       ; clk             ;
+;  ten_sec[5] ; clk        ; 8.138 ; 8.138 ; Rise       ; clk             ;
+;  ten_sec[6] ; clk        ; 8.141 ; 8.141 ; Rise       ; clk             ;
+; un_cen[*]   ; clk        ; 8.651 ; 8.651 ; Rise       ; clk             ;
+;  un_cen[0]  ; clk        ; 7.454 ; 7.454 ; Rise       ; clk             ;
+;  un_cen[1]  ; clk        ; 8.178 ; 8.178 ; Rise       ; clk             ;
+;  un_cen[2]  ; clk        ; 8.651 ; 8.651 ; Rise       ; clk             ;
+;  un_cen[3]  ; clk        ; 8.457 ; 8.457 ; Rise       ; clk             ;
+;  un_cen[4]  ; clk        ; 8.427 ; 8.427 ; Rise       ; clk             ;
+;  un_cen[5]  ; clk        ; 8.397 ; 8.397 ; Rise       ; clk             ;
+;  un_cen[6]  ; clk        ; 8.415 ; 8.415 ; Rise       ; clk             ;
+; un_sec[*]   ; clk        ; 8.489 ; 8.489 ; Rise       ; clk             ;
+;  un_sec[0]  ; clk        ; 8.489 ; 8.489 ; Rise       ; clk             ;
+;  un_sec[1]  ; clk        ; 8.210 ; 8.210 ; Rise       ; clk             ;
+;  un_sec[2]  ; clk        ; 8.269 ; 8.269 ; Rise       ; clk             ;
+;  un_sec[3]  ; clk        ; 8.264 ; 8.264 ; Rise       ; clk             ;
+;  un_sec[4]  ; clk        ; 7.242 ; 7.242 ; Rise       ; clk             ;
+;  un_sec[5]  ; clk        ; 8.218 ; 8.218 ; Rise       ; clk             ;
+;  un_sec[6]  ; clk        ; 8.484 ; 8.484 ; Rise       ; clk             ;
++-------------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                           ;
++-------------+------------+-------+-------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------+------------+-------+-------+------------+-----------------+
+; ten_cen[*]  ; clk        ; 7.184 ; 7.184 ; Rise       ; clk             ;
+;  ten_cen[0] ; clk        ; 7.197 ; 7.197 ; Rise       ; clk             ;
+;  ten_cen[1] ; clk        ; 7.218 ; 7.218 ; Rise       ; clk             ;
+;  ten_cen[2] ; clk        ; 7.426 ; 7.426 ; Rise       ; clk             ;
+;  ten_cen[3] ; clk        ; 7.415 ; 7.415 ; Rise       ; clk             ;
+;  ten_cen[4] ; clk        ; 7.219 ; 7.219 ; Rise       ; clk             ;
+;  ten_cen[5] ; clk        ; 7.427 ; 7.427 ; Rise       ; clk             ;
+;  ten_cen[6] ; clk        ; 7.184 ; 7.184 ; Rise       ; clk             ;
+; ten_sec[*]  ; clk        ; 7.860 ; 7.860 ; Rise       ; clk             ;
+;  ten_sec[0] ; clk        ; 7.860 ; 7.860 ; Rise       ; clk             ;
+;  ten_sec[1] ; clk        ; 7.875 ; 7.875 ; Rise       ; clk             ;
+;  ten_sec[2] ; clk        ; 8.069 ; 8.069 ; Rise       ; clk             ;
+;  ten_sec[3] ; clk        ; 7.875 ; 7.875 ; Rise       ; clk             ;
+;  ten_sec[4] ; clk        ; 7.864 ; 7.864 ; Rise       ; clk             ;
+;  ten_sec[5] ; clk        ; 7.870 ; 7.870 ; Rise       ; clk             ;
+;  ten_sec[6] ; clk        ; 7.875 ; 7.875 ; Rise       ; clk             ;
+; un_cen[*]   ; clk        ; 6.775 ; 6.775 ; Rise       ; clk             ;
+;  un_cen[0]  ; clk        ; 6.775 ; 6.775 ; Rise       ; clk             ;
+;  un_cen[1]  ; clk        ; 7.277 ; 7.277 ; Rise       ; clk             ;
+;  un_cen[2]  ; clk        ; 7.749 ; 7.749 ; Rise       ; clk             ;
+;  un_cen[3]  ; clk        ; 7.539 ; 7.539 ; Rise       ; clk             ;
+;  un_cen[4]  ; clk        ; 7.516 ; 7.516 ; Rise       ; clk             ;
+;  un_cen[5]  ; clk        ; 7.486 ; 7.486 ; Rise       ; clk             ;
+;  un_cen[6]  ; clk        ; 7.491 ; 7.491 ; Rise       ; clk             ;
+; un_sec[*]   ; clk        ; 6.936 ; 6.936 ; Rise       ; clk             ;
+;  un_sec[0]  ; clk        ; 7.416 ; 7.416 ; Rise       ; clk             ;
+;  un_sec[1]  ; clk        ; 7.142 ; 7.142 ; Rise       ; clk             ;
+;  un_sec[2]  ; clk        ; 7.187 ; 7.187 ; Rise       ; clk             ;
+;  un_sec[3]  ; clk        ; 7.183 ; 7.183 ; Rise       ; clk             ;
+;  un_sec[4]  ; clk        ; 6.936 ; 6.936 ; Rise       ; clk             ;
+;  un_sec[5]  ; clk        ; 7.138 ; 7.138 ; Rise       ; clk             ;
+;  un_sec[6]  ; clk        ; 7.417 ; 7.417 ; Rise       ; clk             ;
++-------------+------------+-------+-------+------------+-----------------+
+
+
++------------------------------------+
+; Fast Model Setup Summary           ;
++-----------+--------+---------------+
+; Clock     ; Slack  ; End Point TNS ;
++-----------+--------+---------------+
+; clk_50MHz ; -1.104 ; -10.239       ;
+; clk       ; -0.266 ; -1.841        ;
+; enable    ; 0.665  ; 0.000         ;
++-----------+--------+---------------+
+
+
++-----------------------------------+
+; Fast Model Hold Summary           ;
++-----------+-------+---------------+
+; Clock     ; Slack ; End Point TNS ;
++-----------+-------+---------------+
+; clk       ; 0.215 ; 0.000         ;
+; enable    ; 0.215 ; 0.000         ;
+; clk_50MHz ; 0.360 ; 0.000         ;
++-----------+-------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++-----------+--------+-------------------+
+; Clock     ; Slack  ; End Point TNS     ;
++-----------+--------+-------------------+
+; clk_50MHz ; -1.380 ; -21.380           ;
+; enable    ; -1.380 ; -2.380            ;
+; clk       ; -0.500 ; -15.000           ;
++-----------+--------+-------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'clk_50MHz'                                                                                  ;
++--------+----------------+----------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node      ; To Node        ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------+----------------+--------------+-------------+--------------+------------+------------+
+; -1.104 ; \divisor:k[0]  ; \divisor:k[17] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.001     ; 2.135      ;
+; -1.104 ; \divisor:k[0]  ; \divisor:k[15] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.001     ; 2.135      ;
+; -1.103 ; \divisor:k[0]  ; \divisor:k[16] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.001     ; 2.134      ;
+; -1.091 ; \divisor:k[0]  ; \divisor:k[8]  ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 2.123      ;
+; -1.091 ; \divisor:k[0]  ; \divisor:k[5]  ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 2.123      ;
+; -1.010 ; \divisor:k[1]  ; \divisor:k[17] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.001     ; 2.041      ;
+; -1.010 ; \divisor:k[1]  ; \divisor:k[15] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.001     ; 2.041      ;
+; -1.009 ; \divisor:k[1]  ; \divisor:k[16] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.001     ; 2.040      ;
+; -0.997 ; \divisor:k[1]  ; \divisor:k[8]  ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 2.029      ;
+; -0.997 ; \divisor:k[1]  ; \divisor:k[5]  ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 2.029      ;
+; -0.995 ; \divisor:k[0]  ; \divisor:k[13] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.002      ; 2.029      ;
+; -0.967 ; \divisor:k[2]  ; \divisor:k[17] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.001     ; 1.998      ;
+; -0.967 ; \divisor:k[2]  ; \divisor:k[15] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.001     ; 1.998      ;
+; -0.966 ; \divisor:k[2]  ; \divisor:k[16] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.001     ; 1.997      ;
+; -0.954 ; \divisor:k[0]  ; \divisor:k[18] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.002      ; 1.988      ;
+; -0.954 ; \divisor:k[2]  ; \divisor:k[8]  ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 1.986      ;
+; -0.954 ; \divisor:k[2]  ; \divisor:k[5]  ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 1.986      ;
+; -0.946 ; \divisor:k[3]  ; \divisor:k[17] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.001     ; 1.977      ;
+; -0.946 ; \divisor:k[3]  ; \divisor:k[15] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.001     ; 1.977      ;
+; -0.945 ; \divisor:k[3]  ; \divisor:k[16] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.001     ; 1.976      ;
+; -0.933 ; \divisor:k[3]  ; \divisor:k[8]  ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 1.965      ;
+; -0.933 ; \divisor:k[3]  ; \divisor:k[5]  ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 1.965      ;
+; -0.903 ; \divisor:k[4]  ; \divisor:k[17] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.001     ; 1.934      ;
+; -0.903 ; \divisor:k[4]  ; \divisor:k[15] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.001     ; 1.934      ;
+; -0.902 ; \divisor:k[4]  ; \divisor:k[16] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.001     ; 1.933      ;
+; -0.901 ; \divisor:k[1]  ; \divisor:k[13] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.002      ; 1.935      ;
+; -0.890 ; \divisor:k[4]  ; \divisor:k[8]  ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 1.922      ;
+; -0.890 ; \divisor:k[4]  ; \divisor:k[5]  ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 1.922      ;
+; -0.888 ; \divisor:k[7]  ; \divisor:k[17] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.001     ; 1.919      ;
+; -0.888 ; \divisor:k[7]  ; \divisor:k[15] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.001     ; 1.919      ;
+; -0.887 ; \divisor:k[7]  ; \divisor:k[16] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.001     ; 1.918      ;
+; -0.877 ; \divisor:k[5]  ; \divisor:k[17] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.001     ; 1.908      ;
+; -0.877 ; \divisor:k[5]  ; \divisor:k[15] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.001     ; 1.908      ;
+; -0.876 ; \divisor:k[5]  ; \divisor:k[16] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.001     ; 1.907      ;
+; -0.875 ; \divisor:k[7]  ; \divisor:k[8]  ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 1.907      ;
+; -0.875 ; \divisor:k[7]  ; \divisor:k[5]  ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 1.907      ;
+; -0.864 ; \divisor:k[5]  ; \divisor:k[8]  ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 1.896      ;
+; -0.864 ; \divisor:k[5]  ; \divisor:k[5]  ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 1.896      ;
+; -0.861 ; \divisor:k[9]  ; \divisor:k[17] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.003     ; 1.890      ;
+; -0.861 ; \divisor:k[9]  ; \divisor:k[15] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.003     ; 1.890      ;
+; -0.860 ; \divisor:k[9]  ; \divisor:k[16] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.003     ; 1.889      ;
+; -0.860 ; \divisor:k[1]  ; \divisor:k[18] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.002      ; 1.894      ;
+; -0.858 ; \divisor:k[2]  ; \divisor:k[13] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.002      ; 1.892      ;
+; -0.848 ; \divisor:k[9]  ; \divisor:k[8]  ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.002     ; 1.878      ;
+; -0.848 ; \divisor:k[9]  ; \divisor:k[5]  ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.002     ; 1.878      ;
+; -0.837 ; \divisor:k[3]  ; \divisor:k[13] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.002      ; 1.871      ;
+; -0.829 ; \divisor:k[6]  ; \divisor:k[17] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.001     ; 1.860      ;
+; -0.829 ; \divisor:k[6]  ; \divisor:k[15] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.001     ; 1.860      ;
+; -0.828 ; \divisor:k[6]  ; \divisor:k[16] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.001     ; 1.859      ;
+; -0.817 ; \divisor:k[2]  ; \divisor:k[18] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.002      ; 1.851      ;
+; -0.816 ; \divisor:k[6]  ; \divisor:k[8]  ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 1.848      ;
+; -0.816 ; \divisor:k[6]  ; \divisor:k[5]  ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 1.848      ;
+; -0.796 ; \divisor:k[3]  ; \divisor:k[18] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.002      ; 1.830      ;
+; -0.794 ; \divisor:k[4]  ; \divisor:k[13] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.002      ; 1.828      ;
+; -0.779 ; \divisor:k[7]  ; \divisor:k[13] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.002      ; 1.813      ;
+; -0.768 ; \divisor:k[5]  ; \divisor:k[13] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.002      ; 1.802      ;
+; -0.765 ; \divisor:k[8]  ; \divisor:k[17] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.001     ; 1.796      ;
+; -0.765 ; \divisor:k[8]  ; \divisor:k[15] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.001     ; 1.796      ;
+; -0.764 ; \divisor:k[8]  ; \divisor:k[16] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.001     ; 1.795      ;
+; -0.753 ; \divisor:k[4]  ; \divisor:k[18] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.002      ; 1.787      ;
+; -0.752 ; \divisor:k[8]  ; \divisor:k[8]  ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 1.784      ;
+; -0.752 ; \divisor:k[8]  ; \divisor:k[5]  ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 1.784      ;
+; -0.752 ; \divisor:k[9]  ; \divisor:k[13] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 1.784      ;
+; -0.738 ; \divisor:k[7]  ; \divisor:k[18] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.002      ; 1.772      ;
+; -0.728 ; \divisor:k[10] ; \divisor:k[17] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.003     ; 1.757      ;
+; -0.728 ; \divisor:k[10] ; \divisor:k[15] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.003     ; 1.757      ;
+; -0.727 ; \divisor:k[10] ; \divisor:k[16] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.003     ; 1.756      ;
+; -0.727 ; \divisor:k[5]  ; \divisor:k[18] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.002      ; 1.761      ;
+; -0.723 ; \divisor:k[11] ; \divisor:k[13] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 1.755      ;
+; -0.720 ; \divisor:k[6]  ; \divisor:k[13] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.002      ; 1.754      ;
+; -0.715 ; \divisor:k[10] ; \divisor:k[8]  ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.002     ; 1.745      ;
+; -0.715 ; \divisor:k[10] ; \divisor:k[5]  ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.002     ; 1.745      ;
+; -0.711 ; \divisor:k[9]  ; \divisor:k[18] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 1.743      ;
+; -0.679 ; \divisor:k[6]  ; \divisor:k[18] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.002      ; 1.713      ;
+; -0.670 ; \divisor:k[11] ; \divisor:k[18] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 1.702      ;
+; -0.662 ; \divisor:k[15] ; \divisor:k[17] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 1.694      ;
+; -0.662 ; \divisor:k[15] ; \divisor:k[15] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 1.694      ;
+; -0.661 ; \divisor:k[15] ; \divisor:k[16] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 1.693      ;
+; -0.657 ; \divisor:k[14] ; \divisor:k[13] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 1.689      ;
+; -0.656 ; \divisor:k[8]  ; \divisor:k[13] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.002      ; 1.690      ;
+; -0.654 ; \divisor:k[12] ; \divisor:k[17] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.003     ; 1.683      ;
+; -0.654 ; \divisor:k[12] ; \divisor:k[15] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.003     ; 1.683      ;
+; -0.653 ; \divisor:k[12] ; \divisor:k[16] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.003     ; 1.682      ;
+; -0.643 ; \divisor:k[15] ; \divisor:k[5]  ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.001      ; 1.676      ;
+; -0.643 ; \divisor:k[11] ; \divisor:k[8]  ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.002     ; 1.673      ;
+; -0.643 ; \divisor:k[11] ; \divisor:k[5]  ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.002     ; 1.673      ;
+; -0.642 ; \divisor:k[15] ; \divisor:k[8]  ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.001      ; 1.675      ;
+; -0.641 ; \divisor:k[12] ; \divisor:k[8]  ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.002     ; 1.671      ;
+; -0.641 ; \divisor:k[12] ; \divisor:k[5]  ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.002     ; 1.671      ;
+; -0.636 ; \divisor:k[11] ; \divisor:k[15] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.003     ; 1.665      ;
+; -0.622 ; \divisor:k[16] ; \divisor:k[17] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 1.654      ;
+; -0.622 ; \divisor:k[16] ; \divisor:k[15] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 1.654      ;
+; -0.621 ; \divisor:k[16] ; \divisor:k[16] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 1.653      ;
+; -0.621 ; \divisor:k[10] ; \divisor:k[13] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 1.653      ;
+; -0.615 ; \divisor:k[8]  ; \divisor:k[18] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.002      ; 1.649      ;
+; -0.604 ; \divisor:k[14] ; \divisor:k[18] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.000      ; 1.636      ;
+; -0.603 ; \divisor:k[16] ; \divisor:k[5]  ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.001      ; 1.636      ;
+; -0.602 ; \divisor:k[11] ; \divisor:k[17] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.003     ; 1.631      ;
+; -0.602 ; \divisor:k[16] ; \divisor:k[8]  ; clk_50MHz    ; clk_50MHz   ; 1.000        ; 0.001      ; 1.635      ;
+; -0.601 ; \divisor:k[11] ; \divisor:k[16] ; clk_50MHz    ; clk_50MHz   ; 1.000        ; -0.003     ; 1.630      ;
++--------+----------------+----------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'clk'                                                                                                ;
++--------+--------------------+--------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node          ; To Node            ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------+--------------------+--------------+-------------+--------------+------------+------------+
+; -0.266 ; \counter:count2[3] ; \counter:count3[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.298      ;
+; -0.266 ; \counter:count2[3] ; \counter:count3[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.298      ;
+; -0.266 ; \counter:count2[3] ; \counter:count3[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.298      ;
+; -0.266 ; \counter:count2[3] ; \counter:count3[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.298      ;
+; -0.259 ; \counter:count2[3] ; \counter:count4[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.291      ;
+; -0.259 ; \counter:count2[3] ; \counter:count4[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.291      ;
+; -0.259 ; \counter:count2[3] ; \counter:count4[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.291      ;
+; -0.251 ; \counter:count2[0] ; \counter:count3[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.283      ;
+; -0.251 ; \counter:count2[0] ; \counter:count3[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.283      ;
+; -0.251 ; \counter:count2[0] ; \counter:count3[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.283      ;
+; -0.251 ; \counter:count2[0] ; \counter:count3[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.283      ;
+; -0.244 ; \counter:count2[0] ; \counter:count4[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.276      ;
+; -0.244 ; \counter:count2[0] ; \counter:count4[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.276      ;
+; -0.244 ; \counter:count2[0] ; \counter:count4[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.276      ;
+; -0.221 ; \counter:count3[1] ; \counter:count4[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.253      ;
+; -0.221 ; \counter:count3[1] ; \counter:count4[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.253      ;
+; -0.221 ; \counter:count3[1] ; \counter:count4[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.253      ;
+; -0.218 ; \counter:count3[0] ; \counter:count4[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.250      ;
+; -0.218 ; \counter:count3[0] ; \counter:count4[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.250      ;
+; -0.218 ; \counter:count3[0] ; \counter:count4[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.250      ;
+; -0.190 ; \counter:count[2]  ; \counter:count3[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.222      ;
+; -0.190 ; \counter:count[2]  ; \counter:count3[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.222      ;
+; -0.190 ; \counter:count[2]  ; \counter:count3[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.222      ;
+; -0.190 ; \counter:count[2]  ; \counter:count3[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.222      ;
+; -0.186 ; \counter:count[2]  ; \counter:count4[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.218      ;
+; -0.186 ; \counter:count[2]  ; \counter:count4[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.218      ;
+; -0.186 ; \counter:count[2]  ; \counter:count4[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.218      ;
+; -0.180 ; \counter:count2[2] ; \counter:count3[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.212      ;
+; -0.180 ; \counter:count2[2] ; \counter:count3[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.212      ;
+; -0.180 ; \counter:count2[2] ; \counter:count3[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.212      ;
+; -0.180 ; \counter:count2[2] ; \counter:count3[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.212      ;
+; -0.177 ; \counter:count[3]  ; \counter:count3[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.209      ;
+; -0.177 ; \counter:count[3]  ; \counter:count3[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.209      ;
+; -0.177 ; \counter:count[3]  ; \counter:count3[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.209      ;
+; -0.177 ; \counter:count[3]  ; \counter:count3[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.209      ;
+; -0.173 ; \counter:count2[2] ; \counter:count4[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.205      ;
+; -0.173 ; \counter:count2[2] ; \counter:count4[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.205      ;
+; -0.173 ; \counter:count2[2] ; \counter:count4[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.205      ;
+; -0.173 ; \counter:count[3]  ; \counter:count4[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.205      ;
+; -0.173 ; \counter:count[3]  ; \counter:count4[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.205      ;
+; -0.173 ; \counter:count[3]  ; \counter:count4[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.205      ;
+; -0.146 ; \counter:count3[2] ; \counter:count4[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.178      ;
+; -0.146 ; \counter:count3[2] ; \counter:count4[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.178      ;
+; -0.146 ; \counter:count3[2] ; \counter:count4[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.178      ;
+; -0.137 ; \counter:count[0]  ; \counter:count3[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.169      ;
+; -0.137 ; \counter:count[0]  ; \counter:count3[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.169      ;
+; -0.137 ; \counter:count[0]  ; \counter:count3[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.169      ;
+; -0.137 ; \counter:count[0]  ; \counter:count3[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.169      ;
+; -0.134 ; \counter:count2[1] ; \counter:count3[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.166      ;
+; -0.134 ; \counter:count2[1] ; \counter:count3[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.166      ;
+; -0.134 ; \counter:count2[1] ; \counter:count3[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.166      ;
+; -0.134 ; \counter:count2[1] ; \counter:count3[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.166      ;
+; -0.133 ; \counter:count[0]  ; \counter:count4[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.165      ;
+; -0.133 ; \counter:count[0]  ; \counter:count4[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.165      ;
+; -0.133 ; \counter:count[0]  ; \counter:count4[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.165      ;
+; -0.127 ; \counter:count2[1] ; \counter:count4[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.159      ;
+; -0.127 ; \counter:count2[1] ; \counter:count4[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.159      ;
+; -0.127 ; \counter:count2[1] ; \counter:count4[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.159      ;
+; -0.100 ; \counter:count3[3] ; \counter:count4[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.132      ;
+; -0.100 ; \counter:count3[3] ; \counter:count4[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.132      ;
+; -0.100 ; \counter:count3[3] ; \counter:count4[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.132      ;
+; -0.059 ; \counter:count[1]  ; \counter:count3[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.091      ;
+; -0.059 ; \counter:count[1]  ; \counter:count3[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.091      ;
+; -0.059 ; \counter:count[1]  ; \counter:count3[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.091      ;
+; -0.059 ; \counter:count[1]  ; \counter:count3[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.091      ;
+; -0.055 ; \counter:count[1]  ; \counter:count4[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.087      ;
+; -0.055 ; \counter:count[1]  ; \counter:count4[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.087      ;
+; -0.055 ; \counter:count[1]  ; \counter:count4[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.087      ;
+; 0.014  ; \counter:count2[3] ; \counter:count2[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.018      ;
+; 0.029  ; \counter:count2[2] ; \counter:count2[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 1.003      ;
+; 0.056  ; \counter:count2[1] ; \counter:count2[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.976      ;
+; 0.063  ; \counter:count[0]  ; \counter:count[3]  ; clk          ; clk         ; 1.000        ; 0.000      ; 0.969      ;
+; 0.063  ; \counter:count[0]  ; \counter:count[1]  ; clk          ; clk         ; 1.000        ; 0.000      ; 0.969      ;
+; 0.063  ; \counter:count[2]  ; \counter:count2[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.969      ;
+; 0.063  ; \counter:count[2]  ; \counter:count2[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.969      ;
+; 0.063  ; \counter:count[2]  ; \counter:count2[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.969      ;
+; 0.063  ; \counter:count[2]  ; \counter:count2[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.969      ;
+; 0.076  ; \counter:count[3]  ; \counter:count2[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.956      ;
+; 0.076  ; \counter:count[3]  ; \counter:count2[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.956      ;
+; 0.076  ; \counter:count[3]  ; \counter:count2[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.956      ;
+; 0.076  ; \counter:count[3]  ; \counter:count2[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.956      ;
+; 0.088  ; \counter:count[0]  ; \counter:count[0]  ; clk          ; clk         ; 1.000        ; 0.000      ; 0.944      ;
+; 0.116  ; \counter:count[0]  ; \counter:count2[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.916      ;
+; 0.116  ; \counter:count[0]  ; \counter:count2[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.916      ;
+; 0.116  ; \counter:count[0]  ; \counter:count2[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.916      ;
+; 0.116  ; \counter:count[0]  ; \counter:count2[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.916      ;
+; 0.138  ; \counter:count2[0] ; \counter:count2[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.894      ;
+; 0.192  ; \counter:count[0]  ; \counter:count[2]  ; clk          ; clk         ; 1.000        ; 0.000      ; 0.840      ;
+; 0.194  ; \counter:count[1]  ; \counter:count2[0] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.838      ;
+; 0.194  ; \counter:count[1]  ; \counter:count2[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.838      ;
+; 0.194  ; \counter:count[1]  ; \counter:count2[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.838      ;
+; 0.194  ; \counter:count[1]  ; \counter:count2[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.838      ;
+; 0.394  ; \counter:count[2]  ; \counter:count[1]  ; clk          ; clk         ; 1.000        ; 0.000      ; 0.638      ;
+; 0.396  ; \counter:count[2]  ; \counter:count[3]  ; clk          ; clk         ; 1.000        ; 0.000      ; 0.636      ;
+; 0.419  ; \counter:count4[0] ; \counter:count4[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.613      ;
+; 0.420  ; \counter:count4[0] ; \counter:count4[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.612      ;
+; 0.425  ; \counter:count3[0] ; \counter:count3[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.607      ;
+; 0.425  ; \counter:count3[0] ; \counter:count3[1] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.607      ;
+; 0.427  ; \counter:count2[0] ; \counter:count2[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.605      ;
+; 0.429  ; \counter:count2[0] ; \counter:count2[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.603      ;
++--------+--------------------+--------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'enable'                                                                        ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node ; To Node ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; 0.665 ; en        ; en      ; enable       ; enable      ; 1.000        ; 0.000      ; 0.367      ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'clk'                                                                                                ;
++-------+--------------------+--------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node          ; To Node            ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------+--------------------+--------------+-------------+--------------+------------+------------+
+; 0.215 ; \counter:count[2]  ; \counter:count[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; \counter:count[3]  ; \counter:count[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; \counter:count[1]  ; \counter:count[1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; \counter:count2[0] ; \counter:count2[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; \counter:count2[2] ; \counter:count2[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; \counter:count2[3] ; \counter:count2[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; \counter:count3[0] ; \counter:count3[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; \counter:count3[2] ; \counter:count3[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; \counter:count3[3] ; \counter:count3[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; \counter:count3[1] ; \counter:count3[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; \counter:count4[0] ; \counter:count4[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; \counter:count4[1] ; \counter:count4[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; \counter:count4[2] ; \counter:count4[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.239 ; \counter:count4[2] ; \counter:count4[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.391      ;
+; 0.243 ; \counter:count[3]  ; \counter:count[1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.395      ;
+; 0.247 ; \counter:count[1]  ; \counter:count[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.399      ;
+; 0.252 ; \counter:count2[1] ; \counter:count2[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.404      ;
+; 0.256 ; \counter:count4[1] ; \counter:count4[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.408      ;
+; 0.260 ; \counter:count3[3] ; \counter:count3[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.412      ;
+; 0.261 ; \counter:count3[1] ; \counter:count3[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.413      ;
+; 0.262 ; \counter:count3[1] ; \counter:count3[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.414      ;
+; 0.324 ; \counter:count2[2] ; \counter:count2[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.476      ;
+; 0.366 ; \counter:count[1]  ; \counter:count[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.518      ;
+; 0.373 ; \counter:count3[0] ; \counter:count3[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.525      ;
+; 0.377 ; \counter:count2[1] ; \counter:count2[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.529      ;
+; 0.383 ; \counter:count3[2] ; \counter:count3[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.535      ;
+; 0.385 ; \counter:count3[2] ; \counter:count3[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.537      ;
+; 0.451 ; \counter:count2[0] ; \counter:count2[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.603      ;
+; 0.453 ; \counter:count2[0] ; \counter:count2[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.605      ;
+; 0.455 ; \counter:count3[0] ; \counter:count3[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.607      ;
+; 0.455 ; \counter:count3[0] ; \counter:count3[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.607      ;
+; 0.460 ; \counter:count4[0] ; \counter:count4[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.612      ;
+; 0.461 ; \counter:count4[0] ; \counter:count4[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.613      ;
+; 0.484 ; \counter:count[2]  ; \counter:count[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.636      ;
+; 0.486 ; \counter:count[2]  ; \counter:count[1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.638      ;
+; 0.686 ; \counter:count[1]  ; \counter:count2[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.838      ;
+; 0.686 ; \counter:count[1]  ; \counter:count2[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.838      ;
+; 0.686 ; \counter:count[1]  ; \counter:count2[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.838      ;
+; 0.686 ; \counter:count[1]  ; \counter:count2[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.838      ;
+; 0.688 ; \counter:count[0]  ; \counter:count[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.840      ;
+; 0.742 ; \counter:count2[0] ; \counter:count2[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.894      ;
+; 0.764 ; \counter:count[0]  ; \counter:count2[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.916      ;
+; 0.764 ; \counter:count[0]  ; \counter:count2[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.916      ;
+; 0.764 ; \counter:count[0]  ; \counter:count2[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.916      ;
+; 0.764 ; \counter:count[0]  ; \counter:count2[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.916      ;
+; 0.792 ; \counter:count[0]  ; \counter:count[0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.944      ;
+; 0.804 ; \counter:count[3]  ; \counter:count2[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.956      ;
+; 0.804 ; \counter:count[3]  ; \counter:count2[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.956      ;
+; 0.804 ; \counter:count[3]  ; \counter:count2[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.956      ;
+; 0.804 ; \counter:count[3]  ; \counter:count2[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.956      ;
+; 0.817 ; \counter:count[0]  ; \counter:count[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.969      ;
+; 0.817 ; \counter:count[0]  ; \counter:count[1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.969      ;
+; 0.817 ; \counter:count[2]  ; \counter:count2[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.969      ;
+; 0.817 ; \counter:count[2]  ; \counter:count2[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.969      ;
+; 0.817 ; \counter:count[2]  ; \counter:count2[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.969      ;
+; 0.817 ; \counter:count[2]  ; \counter:count2[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.969      ;
+; 0.824 ; \counter:count2[1] ; \counter:count2[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.976      ;
+; 0.851 ; \counter:count2[2] ; \counter:count2[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.003      ;
+; 0.866 ; \counter:count2[3] ; \counter:count2[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.018      ;
+; 0.935 ; \counter:count[1]  ; \counter:count4[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.087      ;
+; 0.935 ; \counter:count[1]  ; \counter:count4[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.087      ;
+; 0.935 ; \counter:count[1]  ; \counter:count4[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.087      ;
+; 0.939 ; \counter:count[1]  ; \counter:count3[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.091      ;
+; 0.939 ; \counter:count[1]  ; \counter:count3[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.091      ;
+; 0.939 ; \counter:count[1]  ; \counter:count3[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.091      ;
+; 0.939 ; \counter:count[1]  ; \counter:count3[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.091      ;
+; 0.980 ; \counter:count3[3] ; \counter:count4[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.132      ;
+; 0.980 ; \counter:count3[3] ; \counter:count4[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.132      ;
+; 0.980 ; \counter:count3[3] ; \counter:count4[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.132      ;
+; 1.007 ; \counter:count2[1] ; \counter:count4[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.159      ;
+; 1.007 ; \counter:count2[1] ; \counter:count4[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.159      ;
+; 1.007 ; \counter:count2[1] ; \counter:count4[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.159      ;
+; 1.013 ; \counter:count[0]  ; \counter:count4[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.165      ;
+; 1.013 ; \counter:count[0]  ; \counter:count4[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.165      ;
+; 1.013 ; \counter:count[0]  ; \counter:count4[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.165      ;
+; 1.014 ; \counter:count2[1] ; \counter:count3[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.166      ;
+; 1.014 ; \counter:count2[1] ; \counter:count3[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.166      ;
+; 1.014 ; \counter:count2[1] ; \counter:count3[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.166      ;
+; 1.014 ; \counter:count2[1] ; \counter:count3[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.166      ;
+; 1.017 ; \counter:count[0]  ; \counter:count3[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.169      ;
+; 1.017 ; \counter:count[0]  ; \counter:count3[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.169      ;
+; 1.017 ; \counter:count[0]  ; \counter:count3[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.169      ;
+; 1.017 ; \counter:count[0]  ; \counter:count3[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.169      ;
+; 1.026 ; \counter:count3[2] ; \counter:count4[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.178      ;
+; 1.026 ; \counter:count3[2] ; \counter:count4[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.178      ;
+; 1.026 ; \counter:count3[2] ; \counter:count4[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.178      ;
+; 1.053 ; \counter:count[3]  ; \counter:count4[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.205      ;
+; 1.053 ; \counter:count[3]  ; \counter:count4[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.205      ;
+; 1.053 ; \counter:count[3]  ; \counter:count4[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.205      ;
+; 1.053 ; \counter:count2[2] ; \counter:count4[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.205      ;
+; 1.053 ; \counter:count2[2] ; \counter:count4[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.205      ;
+; 1.053 ; \counter:count2[2] ; \counter:count4[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.205      ;
+; 1.057 ; \counter:count[3]  ; \counter:count3[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.209      ;
+; 1.057 ; \counter:count[3]  ; \counter:count3[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.209      ;
+; 1.057 ; \counter:count[3]  ; \counter:count3[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.209      ;
+; 1.057 ; \counter:count[3]  ; \counter:count3[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.209      ;
+; 1.060 ; \counter:count2[2] ; \counter:count3[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.212      ;
+; 1.060 ; \counter:count2[2] ; \counter:count3[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.212      ;
+; 1.060 ; \counter:count2[2] ; \counter:count3[3] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.212      ;
+; 1.060 ; \counter:count2[2] ; \counter:count3[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.212      ;
++-------+--------------------+--------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'enable'                                                                         ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node ; To Node ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; 0.215 ; en        ; en      ; enable       ; enable      ; 0.000        ; 0.000      ; 0.367      ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'clk_50MHz'                                                                                  ;
++-------+----------------+----------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node      ; To Node        ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------+----------------+--------------+-------------+--------------+------------+------------+
+; 0.360 ; \divisor:k[2]  ; \divisor:k[2]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 0.512      ;
+; 0.360 ; \divisor:k[11] ; \divisor:k[11] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 0.512      ;
+; 0.372 ; \divisor:k[3]  ; \divisor:k[3]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 0.524      ;
+; 0.444 ; \divisor:k[14] ; \divisor:k[14] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 0.596      ;
+; 0.454 ; \divisor:k[7]  ; \divisor:k[7]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 0.606      ;
+; 0.498 ; \divisor:k[2]  ; \divisor:k[3]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 0.650      ;
+; 0.500 ; \divisor:k[6]  ; \divisor:k[7]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 0.652      ;
+; 0.503 ; \divisor:k[13] ; \divisor:k[14] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 0.655      ;
+; 0.506 ; \divisor:k[1]  ; \divisor:k[2]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 0.658      ;
+; 0.541 ; \divisor:k[1]  ; \divisor:k[3]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 0.693      ;
+; 0.548 ; \divisor:k[5]  ; \divisor:k[7]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 0.700      ;
+; 0.568 ; \divisor:k[11] ; \divisor:k[14] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 0.720      ;
+; 0.574 ; \divisor:k[4]  ; \divisor:k[7]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 0.726      ;
+; 0.589 ; \divisor:k[10] ; \divisor:k[11] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 0.741      ;
+; 0.600 ; \divisor:k[0]  ; \divisor:k[2]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 0.752      ;
+; 0.617 ; \divisor:k[3]  ; \divisor:k[7]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 0.769      ;
+; 0.620 ; \divisor:k[12] ; \divisor:k[14] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 0.772      ;
+; 0.626 ; \divisor:k[1]  ; \divisor:k[1]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 0.778      ;
+; 0.626 ; \divisor:k[8]  ; \divisor:k[11] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.002      ; 0.780      ;
+; 0.627 ; \divisor:k[0]  ; \divisor:k[0]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 0.779      ;
+; 0.635 ; \divisor:k[0]  ; \divisor:k[3]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 0.787      ;
+; 0.638 ; \divisor:k[2]  ; \divisor:k[7]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 0.790      ;
+; 0.664 ; \divisor:k[8]  ; \divisor:k[8]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 0.816      ;
+; 0.681 ; \divisor:k[1]  ; \divisor:k[7]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 0.833      ;
+; 0.690 ; \divisor:k[6]  ; \divisor:k[11] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.002      ; 0.844      ;
+; 0.694 ; \divisor:k[10] ; \divisor:k[14] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 0.846      ;
+; 0.697 ; \divisor:k[6]  ; \divisor:k[6]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 0.849      ;
+; 0.699 ; \divisor:k[4]  ; \divisor:k[4]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 0.851      ;
+; 0.711 ; \divisor:k[18] ; \divisor:k[18] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 0.863      ;
+; 0.722 ; \divisor:k[9]  ; \divisor:k[11] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 0.874      ;
+; 0.731 ; \divisor:k[8]  ; \divisor:k[14] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.002      ; 0.885      ;
+; 0.738 ; \divisor:k[5]  ; \divisor:k[11] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.002      ; 0.892      ;
+; 0.748 ; \divisor:k[5]  ; \divisor:k[5]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 0.900      ;
+; 0.749 ; \divisor:k[16] ; clk            ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 0.901      ;
+; 0.749 ; \divisor:k[7]  ; \divisor:k[11] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.002      ; 0.903      ;
+; 0.751 ; \divisor:k[13] ; \divisor:k[13] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 0.903      ;
+; 0.764 ; \divisor:k[4]  ; \divisor:k[11] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.002      ; 0.918      ;
+; 0.775 ; \divisor:k[0]  ; \divisor:k[7]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 0.927      ;
+; 0.781 ; \divisor:k[10] ; \divisor:k[10] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 0.933      ;
+; 0.786 ; \divisor:k[12] ; \divisor:k[12] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 0.938      ;
+; 0.787 ; \divisor:k[16] ; \divisor:k[16] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 0.939      ;
+; 0.787 ; \divisor:k[16] ; \divisor:k[17] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 0.939      ;
+; 0.791 ; \divisor:k[17] ; clk            ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 0.943      ;
+; 0.795 ; \divisor:k[6]  ; \divisor:k[14] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.002      ; 0.949      ;
+; 0.807 ; \divisor:k[3]  ; \divisor:k[11] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.002      ; 0.961      ;
+; 0.811 ; \divisor:k[15] ; clk            ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 0.963      ;
+; 0.823 ; \divisor:k[0]  ; \divisor:k[1]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 0.975      ;
+; 0.826 ; \divisor:k[6]  ; \divisor:k[8]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 0.978      ;
+; 0.827 ; \divisor:k[9]  ; \divisor:k[14] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 0.979      ;
+; 0.828 ; \divisor:k[2]  ; \divisor:k[11] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.002      ; 0.982      ;
+; 0.829 ; \divisor:k[17] ; \divisor:k[16] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 0.981      ;
+; 0.829 ; \divisor:k[17] ; \divisor:k[17] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 0.981      ;
+; 0.830 ; \divisor:k[18] ; \divisor:k[13] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 0.982      ;
+; 0.837 ; \divisor:k[11] ; \divisor:k[12] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 0.989      ;
+; 0.843 ; \divisor:k[5]  ; \divisor:k[14] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.002      ; 0.997      ;
+; 0.845 ; \divisor:k[3]  ; \divisor:k[4]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 0.997      ;
+; 0.848 ; \divisor:k[5]  ; \divisor:k[6]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 1.000      ;
+; 0.849 ; \divisor:k[15] ; \divisor:k[16] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 1.001      ;
+; 0.849 ; \divisor:k[15] ; \divisor:k[17] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 1.001      ;
+; 0.854 ; \divisor:k[7]  ; \divisor:k[14] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.002      ; 1.008      ;
+; 0.866 ; \divisor:k[2]  ; \divisor:k[4]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 1.018      ;
+; 0.868 ; \divisor:k[16] ; \divisor:k[15] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 1.020      ;
+; 0.869 ; \divisor:k[4]  ; \divisor:k[14] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.002      ; 1.023      ;
+; 0.871 ; \divisor:k[1]  ; \divisor:k[11] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.002      ; 1.025      ;
+; 0.874 ; \divisor:k[5]  ; \divisor:k[8]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 1.026      ;
+; 0.874 ; \divisor:k[4]  ; \divisor:k[6]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 1.026      ;
+; 0.875 ; \divisor:k[16] ; \divisor:k[8]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.001      ; 1.028      ;
+; 0.875 ; \divisor:k[16] ; \divisor:k[5]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.001      ; 1.028      ;
+; 0.879 ; \divisor:k[4]  ; \divisor:k[5]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 1.031      ;
+; 0.885 ; \divisor:k[7]  ; \divisor:k[8]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 1.037      ;
+; 0.900 ; \divisor:k[4]  ; \divisor:k[8]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 1.052      ;
+; 0.902 ; \divisor:k[16] ; \divisor:k[18] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.003      ; 1.057      ;
+; 0.909 ; \divisor:k[1]  ; \divisor:k[4]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 1.061      ;
+; 0.910 ; \divisor:k[17] ; \divisor:k[15] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 1.062      ;
+; 0.912 ; \divisor:k[3]  ; \divisor:k[14] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.002      ; 1.066      ;
+; 0.917 ; \divisor:k[3]  ; \divisor:k[6]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 1.069      ;
+; 0.917 ; \divisor:k[17] ; \divisor:k[8]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.001      ; 1.070      ;
+; 0.917 ; \divisor:k[17] ; \divisor:k[5]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.001      ; 1.070      ;
+; 0.918 ; en             ; \divisor:k[0]  ; enable       ; clk_50MHz   ; 0.000        ; -0.403     ; 0.667      ;
+; 0.918 ; en             ; \divisor:k[1]  ; enable       ; clk_50MHz   ; 0.000        ; -0.403     ; 0.667      ;
+; 0.918 ; en             ; \divisor:k[2]  ; enable       ; clk_50MHz   ; 0.000        ; -0.403     ; 0.667      ;
+; 0.918 ; en             ; \divisor:k[3]  ; enable       ; clk_50MHz   ; 0.000        ; -0.403     ; 0.667      ;
+; 0.918 ; en             ; \divisor:k[4]  ; enable       ; clk_50MHz   ; 0.000        ; -0.403     ; 0.667      ;
+; 0.918 ; en             ; \divisor:k[6]  ; enable       ; clk_50MHz   ; 0.000        ; -0.403     ; 0.667      ;
+; 0.918 ; en             ; \divisor:k[7]  ; enable       ; clk_50MHz   ; 0.000        ; -0.403     ; 0.667      ;
+; 0.918 ; en             ; \divisor:k[8]  ; enable       ; clk_50MHz   ; 0.000        ; -0.403     ; 0.667      ;
+; 0.918 ; en             ; \divisor:k[5]  ; enable       ; clk_50MHz   ; 0.000        ; -0.403     ; 0.667      ;
+; 0.919 ; \divisor:k[11] ; \divisor:k[13] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 1.071      ;
+; 0.922 ; \divisor:k[3]  ; \divisor:k[5]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 1.074      ;
+; 0.923 ; \divisor:k[8]  ; \divisor:k[10] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.002      ; 1.077      ;
+; 0.930 ; \divisor:k[15] ; \divisor:k[15] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 1.082      ;
+; 0.933 ; \divisor:k[2]  ; \divisor:k[14] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.002      ; 1.087      ;
+; 0.937 ; \divisor:k[15] ; \divisor:k[8]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.001      ; 1.090      ;
+; 0.937 ; \divisor:k[15] ; \divisor:k[5]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.001      ; 1.090      ;
+; 0.938 ; \divisor:k[2]  ; \divisor:k[6]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 1.090      ;
+; 0.943 ; \divisor:k[3]  ; \divisor:k[8]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 1.095      ;
+; 0.943 ; \divisor:k[2]  ; \divisor:k[5]  ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.000      ; 1.095      ;
+; 0.944 ; \divisor:k[17] ; \divisor:k[18] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.003      ; 1.099      ;
+; 0.947 ; \divisor:k[18] ; clk            ; clk_50MHz    ; clk_50MHz   ; 0.000        ; -0.003     ; 1.096      ;
+; 0.955 ; \divisor:k[16] ; \divisor:k[13] ; clk_50MHz    ; clk_50MHz   ; 0.000        ; 0.003      ; 1.110      ;
++-------+----------------+----------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'clk_50MHz'                                                                     ;
++--------+--------------+----------------+------------------+-----------+------------+----------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock     ; Clock Edge ; Target                     ;
++--------+--------------+----------------+------------------+-----------+------------+----------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; clk_50MHz ; Rise       ; clk_50MHz                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk_50MHz ; Rise       ; \divisor:k[0]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; \divisor:k[0]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk_50MHz ; Rise       ; \divisor:k[10]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; \divisor:k[10]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk_50MHz ; Rise       ; \divisor:k[11]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; \divisor:k[11]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk_50MHz ; Rise       ; \divisor:k[12]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; \divisor:k[12]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk_50MHz ; Rise       ; \divisor:k[13]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; \divisor:k[13]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk_50MHz ; Rise       ; \divisor:k[14]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; \divisor:k[14]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk_50MHz ; Rise       ; \divisor:k[15]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; \divisor:k[15]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk_50MHz ; Rise       ; \divisor:k[16]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; \divisor:k[16]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk_50MHz ; Rise       ; \divisor:k[17]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; \divisor:k[17]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk_50MHz ; Rise       ; \divisor:k[18]             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; \divisor:k[18]             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk_50MHz ; Rise       ; \divisor:k[1]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; \divisor:k[1]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk_50MHz ; Rise       ; \divisor:k[2]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; \divisor:k[2]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk_50MHz ; Rise       ; \divisor:k[3]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; \divisor:k[3]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk_50MHz ; Rise       ; \divisor:k[4]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; \divisor:k[4]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk_50MHz ; Rise       ; \divisor:k[5]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; \divisor:k[5]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk_50MHz ; Rise       ; \divisor:k[6]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; \divisor:k[6]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk_50MHz ; Rise       ; \divisor:k[7]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; \divisor:k[7]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk_50MHz ; Rise       ; \divisor:k[8]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; \divisor:k[8]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk_50MHz ; Rise       ; \divisor:k[9]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; \divisor:k[9]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk_50MHz ; Rise       ; clk                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; clk                        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_50MHz ; Rise       ; \divisor:k[0]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; \divisor:k[0]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_50MHz ; Rise       ; \divisor:k[10]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; \divisor:k[10]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_50MHz ; Rise       ; \divisor:k[11]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; \divisor:k[11]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_50MHz ; Rise       ; \divisor:k[12]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; \divisor:k[12]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_50MHz ; Rise       ; \divisor:k[13]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; \divisor:k[13]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_50MHz ; Rise       ; \divisor:k[14]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; \divisor:k[14]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_50MHz ; Rise       ; \divisor:k[15]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; \divisor:k[15]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_50MHz ; Rise       ; \divisor:k[16]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; \divisor:k[16]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_50MHz ; Rise       ; \divisor:k[17]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; \divisor:k[17]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_50MHz ; Rise       ; \divisor:k[18]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; \divisor:k[18]|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_50MHz ; Rise       ; \divisor:k[1]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; \divisor:k[1]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_50MHz ; Rise       ; \divisor:k[2]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; \divisor:k[2]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_50MHz ; Rise       ; \divisor:k[3]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; \divisor:k[3]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_50MHz ; Rise       ; \divisor:k[4]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; \divisor:k[4]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_50MHz ; Rise       ; \divisor:k[5]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; \divisor:k[5]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_50MHz ; Rise       ; \divisor:k[6]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; \divisor:k[6]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_50MHz ; Rise       ; \divisor:k[7]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; \divisor:k[7]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_50MHz ; Rise       ; \divisor:k[8]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; \divisor:k[8]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_50MHz ; Rise       ; \divisor:k[9]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; \divisor:k[9]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_50MHz ; Rise       ; clk_50MHz|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; clk_50MHz|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_50MHz ; Rise       ; clk_50MHz~clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; clk_50MHz~clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_50MHz ; Rise       ; clk_50MHz~clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; clk_50MHz~clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk_50MHz ; Rise       ; clk|clk                    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk_50MHz ; Rise       ; clk|clk                    ;
++--------+--------------+----------------+------------------+-----------+------------+----------------------------+
+
+
++--------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'enable'                                                         ;
++--------+--------------+----------------+------------------+--------+------------+----------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock  ; Clock Edge ; Target         ;
++--------+--------------+----------------+------------------+--------+------------+----------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; enable ; Rise       ; enable         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; enable ; Rise       ; en             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; enable ; Rise       ; en             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enable ; Rise       ; enable|combout ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enable ; Rise       ; enable|combout ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; enable ; Rise       ; en|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; enable ; Rise       ; en|clk         ;
++--------+--------------+----------------+------------------+--------+------------+----------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'clk'                                                                   ;
++--------+--------------+----------------+------------------+-------+------------+------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                 ;
++--------+--------------+----------------+------------------+-------+------------+------------------------+
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \counter:count2[0]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \counter:count2[0]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \counter:count2[1]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \counter:count2[1]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \counter:count2[2]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \counter:count2[2]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \counter:count2[3]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \counter:count2[3]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \counter:count3[0]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \counter:count3[0]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \counter:count3[1]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \counter:count3[1]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \counter:count3[2]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \counter:count3[2]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \counter:count3[3]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \counter:count3[3]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \counter:count4[0]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \counter:count4[0]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \counter:count4[1]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \counter:count4[1]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \counter:count4[2]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \counter:count4[2]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \counter:count[0]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \counter:count[0]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \counter:count[1]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \counter:count[1]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \counter:count[2]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \counter:count[2]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \counter:count[3]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \counter:count[3]      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \counter:count2[0]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \counter:count2[0]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \counter:count2[1]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \counter:count2[1]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \counter:count2[2]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \counter:count2[2]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \counter:count2[3]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \counter:count2[3]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \counter:count3[0]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \counter:count3[0]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \counter:count3[1]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \counter:count3[1]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \counter:count3[2]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \counter:count3[2]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \counter:count3[3]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \counter:count3[3]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \counter:count4[0]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \counter:count4[0]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \counter:count4[1]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \counter:count4[1]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \counter:count4[2]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \counter:count4[2]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \counter:count[0]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \counter:count[0]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \counter:count[1]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \counter:count[1]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \counter:count[2]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \counter:count[2]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \counter:count[3]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \counter:count[3]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk|regout             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk|regout             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~clkctrl|inclk[0]   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk~clkctrl|inclk[0]   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~clkctrl|outclk     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk~clkctrl|outclk     ;
++--------+--------------+----------------+------------------+-------+------------+------------------------+
+
+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-------------+------------+-------+-------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------+------------+-------+-------+------------+-----------------+
+; ten_cen[*]  ; clk        ; 4.170 ; 4.170 ; Rise       ; clk             ;
+;  ten_cen[0] ; clk        ; 4.061 ; 4.061 ; Rise       ; clk             ;
+;  ten_cen[1] ; clk        ; 4.082 ; 4.082 ; Rise       ; clk             ;
+;  ten_cen[2] ; clk        ; 4.170 ; 4.170 ; Rise       ; clk             ;
+;  ten_cen[3] ; clk        ; 4.157 ; 4.157 ; Rise       ; clk             ;
+;  ten_cen[4] ; clk        ; 4.090 ; 4.090 ; Rise       ; clk             ;
+;  ten_cen[5] ; clk        ; 4.170 ; 4.170 ; Rise       ; clk             ;
+;  ten_cen[6] ; clk        ; 4.047 ; 4.047 ; Rise       ; clk             ;
+; ten_sec[*]  ; clk        ; 4.437 ; 4.437 ; Rise       ; clk             ;
+;  ten_sec[0] ; clk        ; 4.349 ; 4.349 ; Rise       ; clk             ;
+;  ten_sec[1] ; clk        ; 4.367 ; 4.367 ; Rise       ; clk             ;
+;  ten_sec[2] ; clk        ; 4.437 ; 4.437 ; Rise       ; clk             ;
+;  ten_sec[3] ; clk        ; 4.367 ; 4.367 ; Rise       ; clk             ;
+;  ten_sec[4] ; clk        ; 4.353 ; 4.353 ; Rise       ; clk             ;
+;  ten_sec[5] ; clk        ; 4.364 ; 4.364 ; Rise       ; clk             ;
+;  ten_sec[6] ; clk        ; 4.367 ; 4.367 ; Rise       ; clk             ;
+; un_cen[*]   ; clk        ; 4.583 ; 4.583 ; Rise       ; clk             ;
+;  un_cen[0]  ; clk        ; 4.050 ; 4.050 ; Rise       ; clk             ;
+;  un_cen[1]  ; clk        ; 4.365 ; 4.365 ; Rise       ; clk             ;
+;  un_cen[2]  ; clk        ; 4.583 ; 4.583 ; Rise       ; clk             ;
+;  un_cen[3]  ; clk        ; 4.505 ; 4.505 ; Rise       ; clk             ;
+;  un_cen[4]  ; clk        ; 4.478 ; 4.478 ; Rise       ; clk             ;
+;  un_cen[5]  ; clk        ; 4.459 ; 4.459 ; Rise       ; clk             ;
+;  un_cen[6]  ; clk        ; 4.477 ; 4.477 ; Rise       ; clk             ;
+; un_sec[*]   ; clk        ; 4.521 ; 4.521 ; Rise       ; clk             ;
+;  un_sec[0]  ; clk        ; 4.521 ; 4.521 ; Rise       ; clk             ;
+;  un_sec[1]  ; clk        ; 4.375 ; 4.375 ; Rise       ; clk             ;
+;  un_sec[2]  ; clk        ; 4.411 ; 4.411 ; Rise       ; clk             ;
+;  un_sec[3]  ; clk        ; 4.405 ; 4.405 ; Rise       ; clk             ;
+;  un_sec[4]  ; clk        ; 3.937 ; 3.937 ; Rise       ; clk             ;
+;  un_sec[5]  ; clk        ; 4.379 ; 4.379 ; Rise       ; clk             ;
+;  un_sec[6]  ; clk        ; 4.515 ; 4.515 ; Rise       ; clk             ;
++-------------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                           ;
++-------------+------------+-------+-------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------+------------+-------+-------+------------+-----------------+
+; ten_cen[*]  ; clk        ; 3.924 ; 3.924 ; Rise       ; clk             ;
+;  ten_cen[0] ; clk        ; 3.938 ; 3.938 ; Rise       ; clk             ;
+;  ten_cen[1] ; clk        ; 3.959 ; 3.959 ; Rise       ; clk             ;
+;  ten_cen[2] ; clk        ; 4.047 ; 4.047 ; Rise       ; clk             ;
+;  ten_cen[3] ; clk        ; 4.034 ; 4.034 ; Rise       ; clk             ;
+;  ten_cen[4] ; clk        ; 3.960 ; 3.960 ; Rise       ; clk             ;
+;  ten_cen[5] ; clk        ; 4.047 ; 4.047 ; Rise       ; clk             ;
+;  ten_cen[6] ; clk        ; 3.924 ; 3.924 ; Rise       ; clk             ;
+; ten_sec[*]  ; clk        ; 4.237 ; 4.237 ; Rise       ; clk             ;
+;  ten_sec[0] ; clk        ; 4.237 ; 4.237 ; Rise       ; clk             ;
+;  ten_sec[1] ; clk        ; 4.250 ; 4.250 ; Rise       ; clk             ;
+;  ten_sec[2] ; clk        ; 4.324 ; 4.324 ; Rise       ; clk             ;
+;  ten_sec[3] ; clk        ; 4.250 ; 4.250 ; Rise       ; clk             ;
+;  ten_sec[4] ; clk        ; 4.241 ; 4.241 ; Rise       ; clk             ;
+;  ten_sec[5] ; clk        ; 4.246 ; 4.246 ; Rise       ; clk             ;
+;  ten_sec[6] ; clk        ; 4.250 ; 4.250 ; Rise       ; clk             ;
+; un_cen[*]   ; clk        ; 3.774 ; 3.774 ; Rise       ; clk             ;
+;  un_cen[0]  ; clk        ; 3.774 ; 3.774 ; Rise       ; clk             ;
+;  un_cen[1]  ; clk        ; 3.971 ; 3.971 ; Rise       ; clk             ;
+;  un_cen[2]  ; clk        ; 4.189 ; 4.189 ; Rise       ; clk             ;
+;  un_cen[3]  ; clk        ; 4.096 ; 4.096 ; Rise       ; clk             ;
+;  un_cen[4]  ; clk        ; 4.075 ; 4.075 ; Rise       ; clk             ;
+;  un_cen[5]  ; clk        ; 4.058 ; 4.058 ; Rise       ; clk             ;
+;  un_cen[6]  ; clk        ; 4.066 ; 4.066 ; Rise       ; clk             ;
+; un_sec[*]   ; clk        ; 3.812 ; 3.812 ; Rise       ; clk             ;
+;  un_sec[0]  ; clk        ; 4.051 ; 4.051 ; Rise       ; clk             ;
+;  un_sec[1]  ; clk        ; 3.908 ; 3.908 ; Rise       ; clk             ;
+;  un_sec[2]  ; clk        ; 3.935 ; 3.935 ; Rise       ; clk             ;
+;  un_sec[3]  ; clk        ; 3.929 ; 3.929 ; Rise       ; clk             ;
+;  un_sec[4]  ; clk        ; 3.812 ; 3.812 ; Rise       ; clk             ;
+;  un_sec[5]  ; clk        ; 3.906 ; 3.906 ; Rise       ; clk             ;
+;  un_sec[6]  ; clk        ; 4.052 ; 4.052 ; Rise       ; clk             ;
++-------------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                           ;
++------------------+---------+-------+----------+---------+---------------------+
+; Clock            ; Setup   ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+---------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -3.636  ; 0.215 ; N/A      ; N/A     ; -1.380              ;
+;  clk             ; -1.572  ; 0.215 ; N/A      ; N/A     ; -0.500              ;
+;  clk_50MHz       ; -3.636  ; 0.360 ; N/A      ; N/A     ; -1.380              ;
+;  enable          ; 0.379   ; 0.215 ; N/A      ; N/A     ; -1.380              ;
+; Design-wide TNS  ; -64.362 ; 0.0   ; 0.0      ; 0.0     ; -38.76              ;
+;  clk             ; -18.350 ; 0.000 ; N/A      ; N/A     ; -15.000             ;
+;  clk_50MHz       ; -46.012 ; 0.000 ; N/A      ; N/A     ; -21.380             ;
+;  enable          ; 0.000   ; 0.000 ; N/A      ; N/A     ; -2.380              ;
++------------------+---------+-------+----------+---------+---------------------+
+
+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-------------+------------+-------+-------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------+------------+-------+-------+------------+-----------------+
+; ten_cen[*]  ; clk        ; 7.732 ; 7.732 ; Rise       ; clk             ;
+;  ten_cen[0] ; clk        ; 7.502 ; 7.502 ; Rise       ; clk             ;
+;  ten_cen[1] ; clk        ; 7.522 ; 7.522 ; Rise       ; clk             ;
+;  ten_cen[2] ; clk        ; 7.732 ; 7.732 ; Rise       ; clk             ;
+;  ten_cen[3] ; clk        ; 7.719 ; 7.719 ; Rise       ; clk             ;
+;  ten_cen[4] ; clk        ; 7.523 ; 7.523 ; Rise       ; clk             ;
+;  ten_cen[5] ; clk        ; 7.732 ; 7.732 ; Rise       ; clk             ;
+;  ten_cen[6] ; clk        ; 7.487 ; 7.487 ; Rise       ; clk             ;
+; ten_sec[*]  ; clk        ; 8.338 ; 8.338 ; Rise       ; clk             ;
+;  ten_sec[0] ; clk        ; 8.128 ; 8.128 ; Rise       ; clk             ;
+;  ten_sec[1] ; clk        ; 8.142 ; 8.142 ; Rise       ; clk             ;
+;  ten_sec[2] ; clk        ; 8.338 ; 8.338 ; Rise       ; clk             ;
+;  ten_sec[3] ; clk        ; 8.141 ; 8.141 ; Rise       ; clk             ;
+;  ten_sec[4] ; clk        ; 8.082 ; 8.082 ; Rise       ; clk             ;
+;  ten_sec[5] ; clk        ; 8.138 ; 8.138 ; Rise       ; clk             ;
+;  ten_sec[6] ; clk        ; 8.141 ; 8.141 ; Rise       ; clk             ;
+; un_cen[*]   ; clk        ; 8.651 ; 8.651 ; Rise       ; clk             ;
+;  un_cen[0]  ; clk        ; 7.454 ; 7.454 ; Rise       ; clk             ;
+;  un_cen[1]  ; clk        ; 8.178 ; 8.178 ; Rise       ; clk             ;
+;  un_cen[2]  ; clk        ; 8.651 ; 8.651 ; Rise       ; clk             ;
+;  un_cen[3]  ; clk        ; 8.457 ; 8.457 ; Rise       ; clk             ;
+;  un_cen[4]  ; clk        ; 8.427 ; 8.427 ; Rise       ; clk             ;
+;  un_cen[5]  ; clk        ; 8.397 ; 8.397 ; Rise       ; clk             ;
+;  un_cen[6]  ; clk        ; 8.415 ; 8.415 ; Rise       ; clk             ;
+; un_sec[*]   ; clk        ; 8.489 ; 8.489 ; Rise       ; clk             ;
+;  un_sec[0]  ; clk        ; 8.489 ; 8.489 ; Rise       ; clk             ;
+;  un_sec[1]  ; clk        ; 8.210 ; 8.210 ; Rise       ; clk             ;
+;  un_sec[2]  ; clk        ; 8.269 ; 8.269 ; Rise       ; clk             ;
+;  un_sec[3]  ; clk        ; 8.264 ; 8.264 ; Rise       ; clk             ;
+;  un_sec[4]  ; clk        ; 7.242 ; 7.242 ; Rise       ; clk             ;
+;  un_sec[5]  ; clk        ; 8.218 ; 8.218 ; Rise       ; clk             ;
+;  un_sec[6]  ; clk        ; 8.484 ; 8.484 ; Rise       ; clk             ;
++-------------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                           ;
++-------------+------------+-------+-------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------+------------+-------+-------+------------+-----------------+
+; ten_cen[*]  ; clk        ; 3.924 ; 3.924 ; Rise       ; clk             ;
+;  ten_cen[0] ; clk        ; 3.938 ; 3.938 ; Rise       ; clk             ;
+;  ten_cen[1] ; clk        ; 3.959 ; 3.959 ; Rise       ; clk             ;
+;  ten_cen[2] ; clk        ; 4.047 ; 4.047 ; Rise       ; clk             ;
+;  ten_cen[3] ; clk        ; 4.034 ; 4.034 ; Rise       ; clk             ;
+;  ten_cen[4] ; clk        ; 3.960 ; 3.960 ; Rise       ; clk             ;
+;  ten_cen[5] ; clk        ; 4.047 ; 4.047 ; Rise       ; clk             ;
+;  ten_cen[6] ; clk        ; 3.924 ; 3.924 ; Rise       ; clk             ;
+; ten_sec[*]  ; clk        ; 4.237 ; 4.237 ; Rise       ; clk             ;
+;  ten_sec[0] ; clk        ; 4.237 ; 4.237 ; Rise       ; clk             ;
+;  ten_sec[1] ; clk        ; 4.250 ; 4.250 ; Rise       ; clk             ;
+;  ten_sec[2] ; clk        ; 4.324 ; 4.324 ; Rise       ; clk             ;
+;  ten_sec[3] ; clk        ; 4.250 ; 4.250 ; Rise       ; clk             ;
+;  ten_sec[4] ; clk        ; 4.241 ; 4.241 ; Rise       ; clk             ;
+;  ten_sec[5] ; clk        ; 4.246 ; 4.246 ; Rise       ; clk             ;
+;  ten_sec[6] ; clk        ; 4.250 ; 4.250 ; Rise       ; clk             ;
+; un_cen[*]   ; clk        ; 3.774 ; 3.774 ; Rise       ; clk             ;
+;  un_cen[0]  ; clk        ; 3.774 ; 3.774 ; Rise       ; clk             ;
+;  un_cen[1]  ; clk        ; 3.971 ; 3.971 ; Rise       ; clk             ;
+;  un_cen[2]  ; clk        ; 4.189 ; 4.189 ; Rise       ; clk             ;
+;  un_cen[3]  ; clk        ; 4.096 ; 4.096 ; Rise       ; clk             ;
+;  un_cen[4]  ; clk        ; 4.075 ; 4.075 ; Rise       ; clk             ;
+;  un_cen[5]  ; clk        ; 4.058 ; 4.058 ; Rise       ; clk             ;
+;  un_cen[6]  ; clk        ; 4.066 ; 4.066 ; Rise       ; clk             ;
+; un_sec[*]   ; clk        ; 3.812 ; 3.812 ; Rise       ; clk             ;
+;  un_sec[0]  ; clk        ; 4.051 ; 4.051 ; Rise       ; clk             ;
+;  un_sec[1]  ; clk        ; 3.908 ; 3.908 ; Rise       ; clk             ;
+;  un_sec[2]  ; clk        ; 3.935 ; 3.935 ; Rise       ; clk             ;
+;  un_sec[3]  ; clk        ; 3.929 ; 3.929 ; Rise       ; clk             ;
+;  un_sec[4]  ; clk        ; 3.812 ; 3.812 ; Rise       ; clk             ;
+;  un_sec[5]  ; clk        ; 3.906 ; 3.906 ; Rise       ; clk             ;
+;  un_sec[6]  ; clk        ; 4.052 ; 4.052 ; Rise       ; clk             ;
++-------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------------+
+; Setup Transfers                                                    ;
++------------+-----------+----------+----------+----------+----------+
+; From Clock ; To Clock  ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+-----------+----------+----------+----------+----------+
+; clk        ; clk       ; 127      ; 0        ; 0        ; 0        ;
+; clk_50MHz  ; clk_50MHz ; 1712     ; 0        ; 0        ; 0        ;
+; enable     ; clk_50MHz ; 20       ; 0        ; 0        ; 0        ;
+; enable     ; enable    ; 1        ; 0        ; 0        ; 0        ;
++------------+-----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++--------------------------------------------------------------------+
+; Hold Transfers                                                     ;
++------------+-----------+----------+----------+----------+----------+
+; From Clock ; To Clock  ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+-----------+----------+----------+----------+----------+
+; clk        ; clk       ; 127      ; 0        ; 0        ; 0        ;
+; clk_50MHz  ; clk_50MHz ; 1712     ; 0        ; 0        ; 0        ;
+; enable     ; clk_50MHz ; 20       ; 0        ; 0        ; 0        ;
+; enable     ; enable    ; 1        ; 0        ; 0        ; 0        ;
++------------+-----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 1     ; 1    ;
+; Unconstrained Input Port Paths  ; 15    ; 15   ;
+; Unconstrained Output Ports      ; 28    ; 28   ;
+; Unconstrained Output Port Paths ; 104   ; 104  ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
+    Info: Processing started: Thu Nov 22 18:45:34 2018
+Info: Command: quartus_sta chronometer -c chronometer
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'chronometer.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clk_50MHz clk_50MHz
+    Info (332105): create_clock -period 1.000 -name enable enable
+    Info (332105): create_clock -period 1.000 -name clk clk
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -3.636
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -3.636       -46.012 clk_50MHz 
+    Info (332119):    -1.572       -18.350 clk 
+    Info (332119):     0.379         0.000 enable 
+Info (332146): Worst-case hold slack is 0.391
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.391         0.000 clk 
+    Info (332119):     0.391         0.000 enable 
+    Info (332119):     0.801         0.000 clk_50MHz 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380       -21.380 clk_50MHz 
+    Info (332119):    -1.380        -2.380 enable 
+    Info (332119):    -0.500       -15.000 clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -1.104
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.104       -10.239 clk_50MHz 
+    Info (332119):    -0.266        -1.841 clk 
+    Info (332119):     0.665         0.000 enable 
+Info (332146): Worst-case hold slack is 0.215
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.215         0.000 clk 
+    Info (332119):     0.215         0.000 enable 
+    Info (332119):     0.360         0.000 clk_50MHz 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380       -21.380 clk_50MHz 
+    Info (332119):    -1.380        -2.380 enable 
+    Info (332119):    -0.500       -15.000 clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 4568 megabytes
+    Info: Processing ended: Thu Nov 22 18:45:37 2018
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:02
+
+
