@@ -1,6 +1,8 @@
 --
 -- 	Cronômetro em VHDL
 --	
+--	Criado por Pâmela Medeiros e Sofia Lopes
+--
 
 	library IEEE;
 	use IEEE.std_logic_1164.all;
